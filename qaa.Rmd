@@ -1,0 +1,102 @@
+---
+title: "QAA"
+author: "James Adler"
+date: "9/1/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Part 1 - Read quality score distributions
+
+### 1. 
+
+```
+# load fastqc module
+module load fastqc/0.11.5
+
+# run fastqc
+fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz \
+  /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz \
+  -t 6 \
+  -o fox
+
+# move html output here
+scp jadler2@talapas-ln1.uoregon.edu:/projects/bgmp/jadler2/bioinfo/Bi623/QAA/fox/*.html .
+```
+
+### 2. 
+
+```
+# run histogram generator from demultiplex assignment-the-first
+sbatch --output=fox_R1_histogram.out \
+  --time=10:00:00 \
+  /projects/bgmp/jadler2/bioinfo/Bi622/Demultiplex/Assignment-the-first/histogram_generator.srun \
+  /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz \
+  101 \
+  3788343 \
+  31_4F_fox_S22_L008_R1_001.histogram.png \
+  fox_R1
+  
+sbatch --output=fox_R2_histogram.out \
+  --time=10:00:00 /projects/bgmp/jadler2/bioinfo/Bi622/Demultiplex/Assignment-the-first/histogram_generator.srun \
+  /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz \
+  101 \
+  3788343 \
+  31_4F_fox_S22_L008_R2_001.histogram.png \
+  fox_R2
+
+```
+
+Yes, the output and runtimes do differ. The fastqc graphs include box and whiskers to demonstrate th erange of values found at each base. The fastqc charts also include green (28-41), yellow (20-28), and red (0-20) areas that correspond to quality level. This is helpful in providing the viewer with a quick reference of quality level at each base. 
+
+The histogram generator runs each took about 3 minutes 45 seconds and only produced the one histogram. The fastqc runs can be run with multiple CPUs using the -t flag. Running the two files with -t 2 results in total runtime of 29 seconds and produces substantially more information relative to our histogram generator script.
+
+### 3. 
+
+The quality of each of the read files is high. Neither was flagged for poor quality. The mean score is in the green for each of the read files. The 31_4F_fox_S22_L008_R2_001.fastq.gz file does have some whiskers that drop down into the 'yellow' zone (less than 28 mean quality score), but the mean and majority quality scores hover between 34-41.
+
+
+# Part 2 - Adaptor trimming comparison
+
+#### 4. 
+
+```
+# create new conda env
+conda create --name QAA python=3.9
+conda activate QAA
+
+# install new packages
+conda install cutadapt
+conda install Trimmomatic
+
+# check version
+cutadapt = 3.4
+Trimmomatic = 0.39
+
+```
+
+#### 5. 
+
+* pulled adapter from 'overrepresented sequences' tab
+
+```
+/usr/bin/time -v cutadapt \
+    -a GATCGGAAGAGCACACGTCTGAACTCCAGTCACGATCTTGCATCTCGTAT \
+    -o trimmed_31_4F_fox_S22_L008_R1_001.fastq.gz \
+    /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz \
+    -j 6
+
+/usr/bin/time -v cutadapt \
+    -a GATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTGCAAGATCGTGTAGATCT \
+    -o trimmed_31_4F_fox_S22_L008_R2_001.fastq.gz \
+    /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz \
+    -j 6
+```
+
+#### 6. 
+  
+
+
