@@ -1,0 +1,54 @@
+0
+500000
+1000000
+1500000
+2000000
+2500000
+3000000
+3500000
+4000000
+4500000
+5000000
+5500000
+6000000
+6500000
+7000000
+7500000
+8000000
+8500000
+9000000
+9500000
+10000000
+10500000
+11000000
+11500000
+12000000
+12500000
+13000000
+13500000
+14000000
+14500000
+15000000
+	Command being timed: "/projects/bgmp/jadler2/bioinfo/Bi622/Demultiplex/Assignment-the-first/histogram_generator.py -f /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz -l 101 -n 3788343 -o 31_4F_fox_S22_L008_R2_001.histogram.png -t fox_R2"
+	User time (seconds): 223.10
+	System time (seconds): 0.11
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:43.84
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 50068
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 26841
+	Voluntary context switches: 1060
+	Involuntary context switches: 525
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

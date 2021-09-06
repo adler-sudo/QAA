@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#SBATCH --account=bgmp
+#SBATCH --partition=bgmp
+
+# activate conda environment
+conda activate QAA
+
+# define variables
+stranded=$1
+alignment_file=$2
+gtf_file=$3
+output_file=$4
+input_file_type="sam"
+
+# run
+/usr/bin/time -v htseq-count \
+    -f=$input_file_type \
+    -s=$stranded \
+    $alignment_file \
+    $gtf_file \
+    -o $output_file

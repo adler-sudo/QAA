@@ -1,0 +1,39 @@
+#!/bin/bash
+
+#SBATCH --account=bgmp
+#SBATCH --partition=bgmp
+#SBATCH --time=10:00:00
+
+# inputs
+# 1 = 1st adapter sequence
+# 2 = 2nd adapter sequence
+# 3 = Desired adapter-trimmed read 1 output fastq.gz
+# 4 = Desired adapter-trimmed read 2 output fastq.gz
+# 5 = Read 1 fastq.gz
+# 6 = Read 2 fastq.gz
+
+
+# activate conda environment
+conda activate QAA
+
+# define variables
+a1=$1 "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA"
+a2=$2 "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT"
+out1=$3 "/projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_31_4F_fox_S22_L008_R1_001.fastq.gz"
+out2=$4 "/projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_31_4F_fox_S22_L008_R2_001.fastq.gz"
+in1=$5 "/projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz"
+in2=$6 "/projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz"
+threads=6
+
+# run
+/usr/bin/time -v cutadapt \
+    -a $a1 \
+    -o $out1 \
+    $in1 \
+    -j $threads
+
+/usr/bin/time -v cutadapt \
+    -a $a2 \
+    -o $out2 \
+    $in2 \
+    -j $threads

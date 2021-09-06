@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#SBATCH --account=bgmp
+#SBATCH --partition=bgmp
+#SBATCH --cpus-per-task=8
+
+# activate conda environment
+conda activate QAA
+
+# define files
+f1="/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001_1P.fastq.gz"
+f2="/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001_2P.fastq.gz"
+gen_dir="/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a"
+
+# run command
+/usr/bin/time -v STAR --runThreadN 8 --runMode alignReads \
+    --outFilterMultimapNmax 3 \
+    --outSAMunmapped Within KeepPairs \
+    --alignIntronMax 1000000 --alignMatesGapMax 1000000 \
+    --readFilesCommand zcat \
+    --readFilesIn $f1 $f2 \
+    --genomeDir $gen_dir \
+    --outFileNamePrefix ./align/

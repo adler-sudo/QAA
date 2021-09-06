@@ -1,0 +1,65 @@
+Started analysis of 23_4A_control_S17_L008_R1_001.fastq.gz
+Started analysis of 23_4A_control_S17_L008_R2_001.fastq.gz
+Approx 5% complete for 23_4A_control_S17_L008_R1_001.fastq.gz
+Approx 5% complete for 23_4A_control_S17_L008_R2_001.fastq.gz
+Approx 10% complete for 23_4A_control_S17_L008_R1_001.fastq.gz
+Approx 10% complete for 23_4A_control_S17_L008_R2_001.fastq.gz
+Approx 15% complete for 23_4A_control_S17_L008_R1_001.fastq.gz
+Approx 15% complete for 23_4A_control_S17_L008_R2_001.fastq.gz
+Approx 20% complete for 23_4A_control_S17_L008_R1_001.fastq.gz
+Approx 20% complete for 23_4A_control_S17_L008_R2_001.fastq.gz
+Approx 25% complete for 23_4A_control_S17_L008_R1_001.fastq.gz
+Approx 25% complete for 23_4A_control_S17_L008_R2_001.fastq.gz
+Approx 30% complete for 23_4A_control_S17_L008_R1_001.fastq.gz
+Approx 30% complete for 23_4A_control_S17_L008_R2_001.fastq.gz
+Approx 35% complete for 23_4A_control_S17_L008_R1_001.fastq.gz
+Approx 35% complete for 23_4A_control_S17_L008_R2_001.fastq.gz
+Approx 40% complete for 23_4A_control_S17_L008_R1_001.fastq.gz
+Approx 40% complete for 23_4A_control_S17_L008_R2_001.fastq.gz
+Approx 45% complete for 23_4A_control_S17_L008_R1_001.fastq.gz
+Approx 45% complete for 23_4A_control_S17_L008_R2_001.fastq.gz
+Approx 50% complete for 23_4A_control_S17_L008_R1_001.fastq.gz
+Approx 50% complete for 23_4A_control_S17_L008_R2_001.fastq.gz
+Approx 55% complete for 23_4A_control_S17_L008_R1_001.fastq.gz
+Approx 55% complete for 23_4A_control_S17_L008_R2_001.fastq.gz
+Approx 60% complete for 23_4A_control_S17_L008_R1_001.fastq.gz
+Approx 60% complete for 23_4A_control_S17_L008_R2_001.fastq.gz
+Approx 65% complete for 23_4A_control_S17_L008_R1_001.fastq.gz
+Approx 65% complete for 23_4A_control_S17_L008_R2_001.fastq.gz
+Approx 70% complete for 23_4A_control_S17_L008_R1_001.fastq.gz
+Approx 70% complete for 23_4A_control_S17_L008_R2_001.fastq.gz
+Approx 75% complete for 23_4A_control_S17_L008_R1_001.fastq.gz
+Approx 75% complete for 23_4A_control_S17_L008_R2_001.fastq.gz
+Approx 80% complete for 23_4A_control_S17_L008_R1_001.fastq.gz
+Approx 80% complete for 23_4A_control_S17_L008_R2_001.fastq.gz
+Approx 85% complete for 23_4A_control_S17_L008_R1_001.fastq.gz
+Approx 85% complete for 23_4A_control_S17_L008_R2_001.fastq.gz
+Approx 90% complete for 23_4A_control_S17_L008_R1_001.fastq.gz
+Approx 90% complete for 23_4A_control_S17_L008_R2_001.fastq.gz
+Approx 95% complete for 23_4A_control_S17_L008_R1_001.fastq.gz
+Approx 95% complete for 23_4A_control_S17_L008_R2_001.fastq.gz
+Analysis complete for 23_4A_control_S17_L008_R1_001.fastq.gz
+Analysis complete for 23_4A_control_S17_L008_R2_001.fastq.gz
+	Command being timed: "fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R1_001.fastq.gz /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R2_001.fastq.gz -o control -t 8"
+	User time (seconds): 435.04
+	System time (seconds): 15.65
+	Percent of CPU this job got: 196%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:49.26
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1173680
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 86406
+	Voluntary context switches: 18577
+	Involuntary context switches: 160
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 5504
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

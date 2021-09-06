@@ -1,0 +1,39 @@
+	STAR --runThreadN 8 --runMode genomeGenerate --genomeDir /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a --genomeFastaFiles /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa --sjdbGTFfile /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.104.gtf
+	STAR version: 2.7.9a   compiled: 2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+Sep 01 17:44:24 ..... started STAR run
+Sep 01 17:44:24 ... starting to generate Genome files
+Sep 01 17:45:02 ..... processing annotations GTF
+Sep 01 17:45:19 ... starting to sort Suffix Array. This may take a long time...
+Sep 01 17:45:32 ... sorting Suffix Array chunks and saving them to disk...
+Sep 01 17:56:18 ... loading chunks from disk, packing SA...
+Sep 01 17:57:03 ... finished generating suffix array
+Sep 01 17:57:03 ... generating Suffix Array index
+Sep 01 17:59:39 ... completed Suffix Array index
+Sep 01 17:59:40 ..... inserting junctions into the genome indices
+Sep 01 18:01:49 ... writing Genome to disk ...
+Sep 01 18:01:50 ... writing Suffix Array to disk ...
+Sep 01 18:01:55 ... writing SAindex to disk
+Sep 01 18:01:56 ..... finished successfully
+	Command being timed: "STAR --runThreadN 8 --runMode genomeGenerate --genomeDir /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a --genomeFastaFiles /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa --sjdbGTFfile /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.104.gtf"
+	User time (seconds): 5541.21
+	System time (seconds): 47.22
+	Percent of CPU this job got: 531%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 17:31.68
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 32290524
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 293784
+	Voluntary context switches: 34275
+	Involuntary context switches: 3802
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

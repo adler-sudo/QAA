@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#SBATCH --account=bgmp
+#SBATCH --partition=bgmp
+#SBATCH --cpus-per-task=8
+
+# activate conda environment
+conda activate QAA
+
+# module load
+module load fastqc/0.11.5
+
+# define variables
+input_file_read_1=$1
+input_file_read_2=$2
+out_dir=$3
+threads=8
+
+# run fastqc
+/usr/bin/time -v fastqc \
+    $input_file_read_1 \
+    $input_file_read_2 \
+    -o $out_dir \
+    -t $threads
