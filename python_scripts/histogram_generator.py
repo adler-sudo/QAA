@@ -138,7 +138,7 @@ mean, linecount = qscore_average_function(
     )
 
 # generate and save histogram of mean score by position
-plt.figure(figsize=(40,15))
+plt.figure(figsize=(15,5))
 plt.bar(range(mean.shape[0]),mean.flatten())
 plt.title('{} Mean Quality Score by Base Position'.format(histogram_subtitle))
 plt.xlabel('Base Position')

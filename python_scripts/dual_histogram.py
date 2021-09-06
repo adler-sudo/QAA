@@ -80,10 +80,11 @@ bins = np.linspace(
     10
 )
 
-plt.hist(trimmed_lengths_read_1,bins=bins,label='read 1',alpha=0.5)
-plt.hist(trimmed_lengths_read_2,bins=bins,label='read 2',alpha=0.5)
+plt.hist(trimmed_lengths_read_1,bins=bins,label='Read 1',alpha=0.5)
+plt.hist(trimmed_lengths_read_2,bins=bins,label='Read 2',alpha=0.5)
+plt.yscale('log')
 plt.title(histogram_title)
-plt.xlabel('length')
-plt.ylabel('occurrences')
+plt.xlabel('Length')
+plt.ylabel('Occurrences')
 plt.legend()
 plt.savefig(output_file)
