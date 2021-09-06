@@ -4,11 +4,8 @@
 import gzip
 import Bioinfo
 import argparse
-import os
-import gzip
 import numpy as np
 import matplotlib.pyplot as plt
-import io
 
 
 # define arparser
@@ -141,8 +138,9 @@ mean, linecount = qscore_average_function(
     )
 
 # generate and save histogram of mean score by position
-plt.bar(range(mean.shape[0]),mean.flatten(),color='purple')
-plt.title('{} mean score by base position in read'.format(histogram_subtitle))
-plt.xlabel('position')
-plt.ylabel('mean score')
+plt.figure(figsize=(20,5))
+plt.bar(range(mean.shape[0]),mean.flatten())
+plt.title('{} Mean Quality Score by Base Position'.format(histogram_subtitle))
+plt.xlabel('Base Position')
+plt.ylabel('Mean Quality Score')
 plt.savefig(output_file)
