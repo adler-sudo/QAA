@@ -179,21 +179,21 @@ pre code {
 module load fastqc/0.11.5
 
 # run fastqc
-fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz
-  /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz
-  -t 6
-  -o fox
+fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz 
+    /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz 
+    -o fox 
+    -t 8
   
-fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R1_001.fastq.gz
-  /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R2_001.fastq.gz
-  -o control
-  -t 8
+fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R1_001.fastq.gz 
+    /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R2_001.fastq.gz 
+    -o control 
+    -t 8
 
 
 # copy html output to local folder
 scp jadler2@talapas-ln1.uoregon.edu:/projects/bgmp/jadler2/bioinfo/Bi623/QAA/fox/*.html .
 scp jadler2@talapas-ln1.uoregon.edu:/projects/bgmp/jadler2/bioinfo/Bi623/QAA/control/*.html .</code></pre>
-<p>The per-base N quality graphd are consisten with the per-base quality graphs in that read 1 has higher N content relative to the other bases, in alignment with the lower per-base quality score relative to the other bases.</p>
+<p>The per-base N quality graphs are consistent with the per-base quality graphs in that base 1 has higher N content relative to the other bases, in alignment with the lower per-base quality score relative to the other bases.</p>
 </div>
 <div id="section-1" class="section level3">
 <h3>2.</h3>
@@ -219,7 +219,7 @@ sbatch --output=fox_R1_histogram.out
 <p>Yes, the output and runtimes do differ. The fastqc graphs include box and whiskers to demonstrate the range of values found at each base. The fastqc charts also include green (28-41), yellow (20-28), and red (0-20) areas that correspond to quality level. This is helpful in providing the viewer with a quick reference of quality level at each base.</p>
 <div id="fox-files" class="section level4">
 <h4>Fox files</h4>
-<p>The histogram generator runs for the fox files each took about 3 minutes 45 seconds and only produced the one histogram. The fastqc runs can be run with multiple CPUs using the -t flag. Running the two files with -t 6 results in total runtime of 29 seconds and produces substantially more information relative to our histogram generator script.</p>
+<p>The histogram generator runs for the fox files each took about 3 minutes 45 seconds and only produced the one histogram. The fastqc runs can be run with multiple CPUs using the -t flag. Running the two files with -t 8 results in total runtime of 29 seconds and produces substantially more information relative to our histogram generator script.</p>
 </div>
 <div id="control-files" class="section level4">
 <h4>Control files</h4>
@@ -248,12 +248,14 @@ conda activate QAA
 
 # install new packages
 conda install cutadapt
-conda install Trimmomatic
-
-# check version
-cutadapt = 3.4
-Trimmomatic = 0.39
-</code></pre>
+conda install Trimmomatic</code></pre>
+<div id="version-of-cutadapt-and-trimmomatic" class="section level5">
+<h5>version of cutadapt and Trimmomatic</h5>
+<ul>
+<li>cutadapt = 3.4</li>
+<li>Trimmomatic = 0.39</li>
+</ul>
+</div>
 </div>
 <div id="section-4" class="section level4">
 <h4>5.</h4>

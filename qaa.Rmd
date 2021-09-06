@@ -20,15 +20,15 @@ knitr::opts_chunk$set(echo = TRUE)
 module load fastqc/0.11.5
 
 # run fastqc
-fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz
-  /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz
-  -t 6
-  -o fox
+fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz 
+    /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz 
+    -o fox 
+    -t 8
   
-fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R1_001.fastq.gz
-  /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R2_001.fastq.gz
-  -o control
-  -t 8
+fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R1_001.fastq.gz 
+    /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R2_001.fastq.gz 
+    -o control 
+    -t 8
 
 
 # copy html output to local folder
@@ -36,9 +36,13 @@ scp jadler2@talapas-ln1.uoregon.edu:/projects/bgmp/jadler2/bioinfo/Bi623/QAA/fox
 scp jadler2@talapas-ln1.uoregon.edu:/projects/bgmp/jadler2/bioinfo/Bi623/QAA/control/*.html .
 ```
 
-The per-base N quality graphd are consisten with the per-base quality graphs in that read 1 has higher N content relative to the other bases, in alignment with the lower per-base quality score relative to the other bases.
+The per-base N quality graphs are consistent with the per-base quality graphs in that base 1 has higher N content relative to the other bases, in alignment with the lower per-base quality score relative to the other bases.
 
-### 2. 
+### 2. Histogram generator
+
+#### FOX FILES
+
+##### read 1
 
 ```
 # run histogram generator from demultiplex assignment-the-first
@@ -53,6 +57,8 @@ sbatch --output=fox_R1_histogram.out
 ```
 ![](images/31_4F_fox_S22_L008_R1_001.histogram.png)
   
+##### read 2
+
 ```
 sbatch --output=fox_R2_histogram.out
   --time=10:00:00 /projects/bgmp/jadler2/bioinfo/Bi622/Demultiplex/Assignment-the-first/histogram_generator.srun
@@ -65,12 +71,29 @@ sbatch --output=fox_R2_histogram.out
 ```
 ![](images/31_4F_fox_S22_L008_R2_001.histogram.png)
 
+#### CONTROL FILES
+
+##### read 1
+
+```
+
+```
+
+##### read 2
+
+```
+
+```
+
+
 Yes, the output and runtimes do differ. The fastqc graphs include box and whiskers to demonstrate the range of values found at each base. The fastqc charts also include green (28-41), yellow (20-28), and red (0-20) areas that correspond to quality level. This is helpful in providing the viewer with a quick reference of quality level at each base. 
 
 #### Fox files
-The histogram generator runs for the fox files each took about 3 minutes 45 seconds and only produced the one histogram. The fastqc runs can be run with multiple CPUs using the -t flag. Running the two files with -t 6 results in total runtime of 29 seconds and produces substantially more information relative to our histogram generator script.
+
+The histogram generator runs for the fox files each took about 3 minutes 45 seconds and only produced the one histogram. The fastqc runs can be run with multiple CPUs using the -t flag. Running the two files with -t 8 results in total runtime of 29 seconds and produces substantially more information relative to our histogram generator script.
 
 #### Control files
+
 The histogram generator runs for the control files each took about    Running fastqc on the two controls files with 8 CPUs result sin total runtime of 3 minutes 45 seconds and produces substantially more information relative to our histogram generator script.
 
 ### 3. 
@@ -93,50 +116,83 @@ conda activate QAA
 # install new packages
 conda install cutadapt
 conda install Trimmomatic
-
-# check version
-cutadapt = 3.4
-Trimmomatic = 0.39
-
 ```
 
-#### 5. 
+##### version of cutadapt and Trimmomatic
+
+* cutadapt = 3.4
+* Trimmomatic = 0.39
+
+#### 5. Adapter trim
+
+##### FOX FILES
+
+##### read 1
 
 ```
-/usr/bin/time -v cutadapt
-    -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA
-    -o trimmed_31_4F_fox_S22_L008_R1_001.fastq.gz
-    /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz
-    -j 6
-
-/usr/bin/time -v cutadapt
-    -a AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT
-    -o trimmed_31_4F_fox_S22_L008_R2_001.fastq.gz
-    /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz
+cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA 
+    -o /projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_31_4F_fox_S22_L008_R1_001.fastq.gz 
+    /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz 
     -j 6
 ```
+
+##### read 2
+
+```
+cutadapt -a AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT 
+    -o /projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_31_4F_fox_S22_L008_R2_001.fastq.gz 
+    /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz 
+    -j 6
+```
+
+##### CONTROL FILES
+
+##### read 1 
+
+```
+cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA 
+  -o /projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_23_4A_control_S17_L008_R1_001.fastq.gz 
+  /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R1_001.fastq.gz 
+  -j 6
+```
+
+##### read 2
+
+```
+cutadapt -a AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT 
+  -o /projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_23_4A_control_S17_L008_R2_001.fastq.gz 
+  /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R2_001.fastq.gz 
+  -j 6
+```
+
+
 
 ##### confirm adapter were removed
 
 ```
-zcat trimmed_31_4F_fox_S22_L008_R1_001.fastq.gz | grep -e "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA"
+zcat trimmed_31_4F_fox_S22_L008_R1_001.fastq.gz | grep "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA"
 
-zcat trimmed_31_4F_fox_S22_L008_R2_001.fastq.gz | grep -e "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT"
+zcat trimmed_31_4F_fox_S22_L008_R2_001.fastq.gz | grep "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT"
+
+zcat trimmed_23_4A_control_S17_L008_R1_001.fastq.gz | grep "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA"
+
+zcat trimmed_23_4A_control_S17_L008_R2_001.fastq.gz | grep "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT"
 ```
 
-* neither command returned anything, confirming that none of the reads present in each of those files contain the adapter sequence
+* all returns were empty, confirming that none of the reads present in each of the files contain the adapter sequence
 
-#### 6. 
+#### 6. Trimmomatic runs
+
+##### FOX FILES
 
 ```
-java -jar /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trimmomatic-0.39/trimmomatic-0.39.jar PE
-  -threads 8
-  /projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_31_4F_fox_S22_L008_R1_001.fastq.gz
-  /projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_31_4F_fox_S22_L008_R2_001.fastq.gz
-  -baseout Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001.fastq.gz
-  LEADING:3
-  TRAILING:3
-  SLIDINGWINDOW:5:15
+java -jar /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trimmomatic-0.39/trimmomatic-0.39.jar PE 
+  -threads 8 /projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_31_4F_fox_S22_L008_R1_001.fastq.gz 
+  /projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_31_4F_fox_S22_L008_R2_001.fastq.gz 
+  -baseout /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001.fastq.gz 
+  LEADING:3 
+  TRAILING:3 
+  SLIDINGWINDOW:5:15 
   MINLEN:35
 ```
 
