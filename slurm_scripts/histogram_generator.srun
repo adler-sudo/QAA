@@ -15,7 +15,7 @@ output_file=$4
 histogram_subtitle=$5
 
 # run
-/usr/bin/time -v /projects/bgmp/jadler2/bioinfo/Bi623/QAA/histogram_generator.py \
+/usr/bin/time -v /projects/bgmp/jadler2/bioinfo/Bi623/QAA/python_scripts/histogram_generator.py \
     -f $input_file \
     -l $read_length \
     -n $num_reads \
