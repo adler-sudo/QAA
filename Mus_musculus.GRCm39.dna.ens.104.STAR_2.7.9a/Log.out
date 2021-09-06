@@ -1,0 +1,224 @@
+STAR version=2.7.9a
+STAR compilation time,server,dir=2021-05-04T09:43:56-0400 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+##### Command Line:
+STAR --runThreadN 8 --runMode genomeGenerate --genomeDir /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a --genomeFastaFiles /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa --sjdbGTFfile /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.104.gtf
+##### Initial USER parameters from Command Line:
+###### All USER parameters from Command Line:
+runThreadN                    8     ~RE-DEFINED
+runMode                       genomeGenerate        ~RE-DEFINED
+genomeDir                     /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a     ~RE-DEFINED
+genomeFastaFiles              /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa        ~RE-DEFINED
+sjdbGTFfile                   /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.104.gtf     ~RE-DEFINED
+##### Finished reading parameters from all sources
+
+##### Final user re-defined parameters-----------------:
+runMode                           genomeGenerate   
+runThreadN                        8
+genomeDir                         /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a
+genomeFastaFiles                  /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa   
+sjdbGTFfile                       /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.104.gtf
+
+-------------------------------
+##### Final effective command line:
+STAR   --runMode genomeGenerate      --runThreadN 8   --genomeDir /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a   --genomeFastaFiles /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa      --sjdbGTFfile /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.104.gtf
+----------------------------------------
+
+Number of fastq files for each mate = 1
+ParametersSolo: --soloCellFilterType CellRanger2.2 filtering parameters:  3000 0.99 10
+Finished loading and checking parameters
+--genomeDir directory exists and will be overwritten: /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a/
+Sep 01 17:44:24 ... starting to generate Genome files
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 0  "1" chrStart: 0
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 1  "10" chrStart: 195297280
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 2  "11" chrStart: 325844992
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 3  "12" chrStart: 448004096
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 4  "13" chrStart: 568328192
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 5  "14" chrStart: 689438720
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 6  "15" chrStart: 814743552
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 7  "16" chrStart: 919076864
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 8  "17" chrStart: 1017118720
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 9  "18" chrStart: 1112539136
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 10  "19" chrStart: 1203503104
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 11  "2" chrStart: 1265106944
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 12  "3" chrStart: 1447034880
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 13  "4" chrStart: 1606942720
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 14  "5" chrStart: 1763966976
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 15  "6" chrStart: 1915748352
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 16  "7" chrStart: 2065432576
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 17  "8" chrStart: 2210660352
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 18  "9" chrStart: 2340945920
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 19  "MT" chrStart: 2465464320
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 20  "X" chrStart: 2465726464
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 21  "Y" chrStart: 2635333632
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 22  "JH584299.1" chrStart: 2726821888
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 23  "GL456233.2" chrStart: 2727870464
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 24  "JH584301.1" chrStart: 2728656896
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 25  "GL456211.1" chrStart: 2728919040
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 26  "GL456221.1" chrStart: 2729181184
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 27  "JH584297.1" chrStart: 2729443328
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 28  "JH584296.1" chrStart: 2729705472
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 29  "GL456354.1" chrStart: 2729967616
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 30  "JH584298.1" chrStart: 2730229760
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 31  "JH584300.1" chrStart: 2730491904
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 32  "GL456219.1" chrStart: 2730754048
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 33  "GL456210.1" chrStart: 2731016192
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 34  "JH584303.1" chrStart: 2731278336
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 35  "JH584302.1" chrStart: 2731540480
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 36  "GL456212.1" chrStart: 2731802624
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 37  "JH584304.1" chrStart: 2732064768
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 38  "GL456379.1" chrStart: 2732326912
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 39  "GL456366.1" chrStart: 2732589056
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 40  "GL456367.1" chrStart: 2732851200
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 41  "GL456239.1" chrStart: 2733113344
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 42  "GL456383.1" chrStart: 2733375488
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 43  "GL456385.1" chrStart: 2733637632
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 44  "GL456360.1" chrStart: 2733899776
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 45  "GL456378.1" chrStart: 2734161920
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 46  "MU069435.1" chrStart: 2734424064
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 47  "GL456389.1" chrStart: 2734686208
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 48  "GL456372.1" chrStart: 2734948352
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 49  "GL456370.1" chrStart: 2735210496
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 50  "GL456381.1" chrStart: 2735472640
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 51  "GL456387.1" chrStart: 2735734784
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 52  "GL456390.1" chrStart: 2735996928
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 53  "GL456394.1" chrStart: 2736259072
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 54  "GL456392.1" chrStart: 2736521216
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 55  "GL456382.1" chrStart: 2736783360
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 56  "GL456359.1" chrStart: 2737045504
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 57  "GL456396.1" chrStart: 2737307648
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 58  "GL456368.1" chrStart: 2737569792
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 59  "MU069434.1" chrStart: 2737831936
+/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa : chr # 60  "JH584295.1" chrStart: 2738094080
+Chromosome sequence lengths: 
+1	195154279
+10	130530862
+11	121973369
+12	120092757
+13	120883175
+14	125139656
+15	104073951
+16	98008968
+17	95294699
+18	90720763
+19	61420004
+2	181755017
+3	159745316
+4	156860686
+5	151758149
+6	149588044
+7	144995196
+8	130127694
+9	124359700
+MT	16299
+X	169476592
+Y	91455967
+JH584299.1	953012
+GL456233.2	559103
+JH584301.1	259875
+GL456211.1	241735
+GL456221.1	206961
+JH584297.1	205776
+JH584296.1	199368
+GL456354.1	195993
+JH584298.1	184189
+JH584300.1	182347
+GL456219.1	175968
+GL456210.1	169725
+JH584303.1	158099
+JH584302.1	155838
+GL456212.1	153618
+JH584304.1	114452
+GL456379.1	72385
+GL456366.1	47073
+GL456367.1	42057
+GL456239.1	40056
+GL456383.1	38659
+GL456385.1	35240
+GL456360.1	31704
+GL456378.1	31602
+MU069435.1	31129
+GL456389.1	28772
+GL456372.1	28664
+GL456370.1	26764
+GL456381.1	25871
+GL456387.1	24685
+GL456390.1	24668
+GL456394.1	24323
+GL456392.1	23629
+GL456382.1	23158
+GL456359.1	22974
+GL456396.1	21240
+GL456368.1	20208
+MU069434.1	8412
+JH584295.1	1976
+Genome sequence total length = 2728222451
+Genome size with padding = 2738356224
+Sep 01 17:45:02 ..... processing annotations GTF
+Processing pGe.sjdbGTFfile=/projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.104.gtf, found:
+		142434 transcripts
+		842117 exons (non-collapsed)
+		284981 collapsed junctions
+Total junctions: 284981
+Sep 01 17:45:10 ..... finished GTF processing
+
+Estimated genome size with padding and SJs: total=genome+SJ=2939356224 = 2738356224 + 201000000
+GstrandBit=32
+Number of SA indices: 5309243566
+Sep 01 17:45:19 ... starting to sort Suffix Array. This may take a long time...
+Number of chunks: 24;   chunks size limit: 1914246544 bytes
+Sep 01 17:45:32 ... sorting Suffix Array chunks and saving them to disk...
+Writing 1761388056 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA_1 ; empty space on disk = 328346521042944 bytes ... done
+Writing 1735971512 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA_3 ; empty space on disk = 328344757338112 bytes ... done
+Writing 1854034976 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA_0 ; empty space on disk = 328343020896256 bytes ... done
+Writing 1832467656 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA_2 ; empty space on disk = 328341164916736 bytes ... done
+Writing 1790148352 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA_6 ; empty space on disk = 328339332005888 bytes ... done
+Writing 1868710672 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA_4 ; empty space on disk = 328337541038080 bytes ...Writing 1836071784 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA_5 ; empty space on disk = 328336758800384 bytes ... done
+ done
+Writing 1881135680 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA_7 ; empty space on disk = 328333833273344 bytes ... done
+Writing 1787061616 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA_9 ; empty space on disk = 328290703245312 bytes ... done
+Writing 1773261472 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA_8 ; empty space on disk = 328278185345024 bytes ... done
+Writing 1738304216 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA_10 ; empty space on disk = 328276409057280 bytes ... done
+Writing 1826940776 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA_11 ; empty space on disk = 328274668421120 bytes ... done
+Writing 1882586808 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA_14 ; empty space on disk = 328272839704576 bytes ... done
+Writing 1882992120 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA_13 ; empty space on disk = 328270954364928 bytes ... done
+Writing 1869480048 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA_12 ; empty space on disk = 328269069025280 bytes ... done
+Writing 1881806984 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA_15 ; empty space on disk = 328267198365696 bytes ... done
+Writing 801751320 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA_23 ; empty space on disk = 328202161487872 bytes ... done
+Writing 1581660584 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA_21 ; empty space on disk = 328134268289024 bytes ... done
+Writing 1843649328 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA_18 ; empty space on disk = 328132684939264 bytes ... done
+Writing 1775408048 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA_19 ; empty space on disk = 328130839445504 bytes ... done
+Writing 1707621360 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA_20 ; empty space on disk = 328129061060608 bytes ... done
+Writing 1763670480 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA_22 ; empty space on disk = 328127351881728 bytes ... done
+Writing 1887742128 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA_16 ; empty space on disk = 328125588176896 bytes ... done
+Writing 1910082552 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA_17 ; empty space on disk = 328123698642944 bytes ... done
+Sep 01 17:56:18 ... loading chunks from disk, packing SA...
+Sep 01 17:57:03 ... finished generating suffix array
+Sep 01 17:57:03 ... generating Suffix Array index
+Sep 01 17:59:39 ... completed Suffix Array index
+WARNING: long repeat for junction # 64485 : 13 36192501 36373186; left shift = 255; right shift = 29
+WARNING: long repeat for junction # 72007 : 13 119631671 120070727; left shift = 36; right shift = 255
+WARNING: long repeat for junction # 88263 : 15 75976552 75988902; left shift = 0; right shift = 255
+WARNING: long repeat for junction # 196739 : 5 112922393 112922883; left shift = 255; right shift = 69
+WARNING: long repeat for junction # 199097 : 5 123328298 123329023; left shift = 255; right shift = 19
+WARNING: long repeat for junction # 208188 : 6 48731569 48732130; left shift = 81; right shift = 255
+WARNING: long repeat for junction # 240111 : 7 141361933 141364041; left shift = 255; right shift = 255
+Sep 01 17:59:40   Finished preparing junctions
+Sep 01 17:59:40 ..... inserting junctions into the genome indices
+Sep 01 18:00:10   Finished SA search: number of new junctions=284920, old junctions=0
+Sep 01 18:00:37   Finished sorting SA indicesL nInd=113967958
+Genome size with junctions=2795625144  2738356224   57268920
+GstrandBit1=32   GstrandBit=32
+Sep 01 18:01:32   Finished inserting junction indices
+Sep 01 18:01:49   Finished SAi
+Sep 01 18:01:49 ..... finished inserting junctions into genome
+Sep 01 18:01:49 ... writing Genome to disk ...
+Writing 2795625144 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//Genome ; empty space on disk = 327829352873984 bytes ... done
+SA size in bytes: 22370747540
+Sep 01 18:01:50 ... writing Suffix Array to disk ...
+Writing 22370747540 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SA ; empty space on disk = 327826555273216 bytes ... done
+Sep 01 18:01:55 ... writing SAindex to disk
+Writing 8 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SAindex ; empty space on disk = 327804182855680 bytes ... done
+Writing 120 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SAindex ; empty space on disk = 327804182855680 bytes ... done
+Writing 1565873491 bytes into /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a//SAindex ; empty space on disk = 327804182855680 bytes ... done
+Sep 01 18:01:56 ..... finished successfully
+DONE: Genome generation, EXITING

@@ -29,21 +29,21 @@
 14000000
 14500000
 15000000
-	Command being timed: "/projects/bgmp/jadler2/bioinfo/Bi623/QAA/python_scripts/histogram_generator.py -f /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz -l 101 -n 3788343 -o 31_4F_fox_S22_L008_R1_001.histogram.png -t fox_R1"
-	User time (seconds): 197.39
+	Command being timed: "/projects/bgmp/jadler2/bioinfo/Bi623/QAA/python_scripts/histogram_generator.py -f /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz -l 101 -n 3788343 -o 31_4F_fox_S22_L008_R2_001.histogram.png -t fox_R2"
+	User time (seconds): 196.99
 	System time (seconds): 0.12
 	Percent of CPU this job got: 99%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:18.03
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:17.78
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 50048
+	Maximum resident set size (kbytes): 50056
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 26730
-	Voluntary context switches: 828
-	Involuntary context switches: 494
+	Minor (reclaiming a frame) page faults: 26779
+	Voluntary context switches: 919
+	Involuntary context switches: 561
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 0

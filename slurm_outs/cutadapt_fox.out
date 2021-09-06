@@ -1,0 +1,301 @@
+This is cutadapt 3.4 with Python 3.9.6
+Command line parameters: -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -o /projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_31_4F_fox_S22_L008_R1_001.fastq.gz /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz -j 6
+Processing reads on 6 cores in single-end mode ...
+Finished in 11.04 s (3 µs/read; 20.58 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:               3,788,343
+Reads with adapters:                   456,168 (12.0%)
+Reads written (passing filters):     3,788,343 (100.0%)
+
+Total basepairs processed:   382,622,643 bp
+Total written (filtered):    370,502,712 bp (96.8%)
+
+=== Adapter 1 ===
+
+Sequence: AGATCGGAAGAGCACACGTCTGAACTCCAGTCA; Type: regular 3'; Length: 33; Trimmed: 456168 times
+
+No. of allowed errors:
+1-9 bp: 0; 10-19 bp: 1; 20-29 bp: 2; 30-33 bp: 3
+
+Bases preceding removed adapters:
+  A: 12.6%
+  C: 28.1%
+  G: 38.2%
+  T: 14.2%
+  none/other: 6.9%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+3	72536	59192.9	0	72536
+4	21838	14798.2	0	21838
+5	12197	3699.6	0	12197
+6	9423	924.9	0	9423
+7	9006	231.2	0	9006
+8	8919	57.8	0	8919
+9	8806	14.5	0	8720 86
+10	9182	3.6	1	8880 302
+11	8883	0.9	1	8626 257
+12	8757	0.2	1	8477 280
+13	8569	0.1	1	8343 226
+14	8510	0.0	1	8250 260
+15	8335	0.0	1	8062 273
+16	8343	0.0	1	8031 312
+17	8082	0.0	1	7762 320
+18	8040	0.0	1	7736 285 19
+19	7891	0.0	1	7571 305 15
+20	7714	0.0	2	7396 281 37
+21	7600	0.0	2	7267 297 36
+22	7697	0.0	2	7316 336 45
+23	7409	0.0	2	7065 298 46
+24	7328	0.0	2	6941 315 72
+25	7272	0.0	2	6901 311 60
+26	7254	0.0	2	6874 333 47
+27	6941	0.0	2	6523 359 52 7
+28	6756	0.0	2	6380 324 39 13
+29	6627	0.0	2	6226 325 60 16
+30	6441	0.0	3	6022 342 49 28
+31	6446	0.0	3	6049 335 45 17
+32	6207	0.0	3	5826 310 53 18
+33	6057	0.0	3	5667 325 48 17
+34	6050	0.0	3	5692 307 35 16
+35	5715	0.0	3	5356 292 50 17
+36	5595	0.0	3	5270 255 27 43
+37	5527	0.0	3	5199 258 37 33
+38	5290	0.0	3	4978 265 32 15
+39	5046	0.0	3	4741 237 30 38
+40	4777	0.0	3	4485 233 35 24
+41	4596	0.0	3	4310 239 30 17
+42	4335	0.0	3	4081 213 23 18
+43	4112	0.0	3	3900 177 17 18
+44	3719	0.0	3	3494 187 22 16
+45	3602	0.0	3	3394 171 21 16
+46	3424	0.0	3	3243 151 17 13
+47	3193	0.0	3	3014 146 18 15
+48	3038	0.0	3	2877 143 10 8
+49	2880	0.0	3	2728 139 9 4
+50	2561	0.0	3	2408 133 13 7
+51	2478	0.0	3	2328 117 21 12
+52	2226	0.0	3	2102 109 12 3
+53	2105	0.0	3	2001 91 7 6
+54	1841	0.0	3	1744 72 15 10
+55	1646	0.0	3	1560 69 10 7
+56	1525	0.0	3	1456 58 4 7
+57	1479	0.0	3	1412 59 4 4
+58	1376	0.0	3	1321 49 3 3
+59	1318	0.0	3	1252 50 12 4
+60	1215	0.0	3	1171 32 8 4
+61	1108	0.0	3	1045 54 5 4
+62	1000	0.0	3	952 40 6 2
+63	926	0.0	3	891 30 2 3
+64	809	0.0	3	770 32 4 3
+65	769	0.0	3	719 40 5 5
+66	672	0.0	3	634 36 1 1
+67	570	0.0	3	539 27 1 3
+68	562	0.0	3	541 18 2 1
+69	533	0.0	3	508 22 2 1
+70	468	0.0	3	446 21 1
+71	385	0.0	3	368 14 1 2
+72	361	0.0	3	348 13
+73	297	0.0	3	283 13 1
+74	224	0.0	3	214 10
+75	122	0.0	3	118 4
+76	95	0.0	3	87 7 1
+77	69	0.0	3	65 4
+78	47	0.0	3	45 0 2
+79	32	0.0	3	31 1
+80	19	0.0	3	18 1
+81	9	0.0	3	9
+82	4	0.0	3	4
+83	6	0.0	3	5 0 0 1
+84	2	0.0	3	2
+85	3	0.0	3	2 1
+86	6	0.0	3	6
+87	5	0.0	3	5
+88	1	0.0	3	1
+89	11	0.0	3	10 1
+91	4	0.0	3	4
+92	3	0.0	3	2 0 1
+93	2	0.0	3	2
+94	3	0.0	3	3
+95	5	0.0	3	5
+96	5	0.0	3	5
+97	1	0.0	3	1
+98	1	0.0	3	1
+99	2	0.0	3	2
+101	31292	0.0	3	0 28682 2427 183
+	Command being timed: "cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -o /projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_31_4F_fox_S22_L008_R1_001.fastq.gz /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz -j 6"
+	User time (seconds): 75.32
+	System time (seconds): 2.18
+	Percent of CPU this job got: 695%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:11.14
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 168844
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 330046
+	Voluntary context switches: 72529
+	Involuntary context switches: 968
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+This is cutadapt 3.4 with Python 3.9.6
+Command line parameters: -a AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT -o /projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_31_4F_fox_S22_L008_R2_001.fastq.gz /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz -j 6
+Processing reads on 6 cores in single-end mode ...
+Finished in 11.99 s (3 µs/read; 18.96 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:               3,788,343
+Reads with adapters:                   482,503 (12.7%)
+Reads written (passing filters):     3,788,343 (100.0%)
+
+Total basepairs processed:   382,622,643 bp
+Total written (filtered):    370,398,401 bp (96.8%)
+
+=== Adapter 1 ===
+
+Sequence: AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT; Type: regular 3'; Length: 33; Trimmed: 482503 times
+
+No. of allowed errors:
+1-9 bp: 0; 10-19 bp: 1; 20-29 bp: 2; 30-33 bp: 3
+
+Bases preceding removed adapters:
+  A: 13.2%
+  C: 29.5%
+  G: 41.9%
+  T: 9.0%
+  none/other: 6.5%
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+3	92736	59192.9	0	92736
+4	25200	14798.2	0	25200
+5	13208	3699.6	0	13208
+6	9908	924.9	0	9908
+7	9096	231.2	0	9096
+8	8964	57.8	0	8964
+9	8917	14.5	0	8795 122
+10	9284	3.6	1	8935 349
+11	8972	0.9	1	8735 237
+12	8802	0.2	1	8561 241
+13	8611	0.1	1	8383 228
+14	8552	0.0	1	8339 213
+15	8383	0.0	1	8078 305
+16	8376	0.0	1	8139 237
+17	8126	0.0	1	7870 256
+18	8066	0.0	1	7718 337 11
+19	7921	0.0	1	7632 277 12
+20	7748	0.0	2	7407 299 42
+21	7617	0.0	2	7312 273 32
+22	7740	0.0	2	7396 306 38
+23	7441	0.0	2	7121 281 39
+24	7359	0.0	2	6985 336 38
+25	7306	0.0	2	6932 329 45
+26	7279	0.0	2	6911 319 49
+27	6983	0.0	2	6634 300 42 7
+28	6772	0.0	2	6403 297 67 5
+29	6654	0.0	2	6317 294 36 7
+30	6458	0.0	3	6085 310 49 14
+31	6456	0.0	3	6023 350 57 26
+32	6224	0.0	3	5873 291 51 9
+33	6068	0.0	3	5724 284 48 12
+34	6081	0.0	3	5740 273 50 18
+35	5733	0.0	3	5439 253 31 10
+36	5618	0.0	3	5291 269 41 17
+37	5529	0.0	3	5197 279 37 16
+38	5291	0.0	3	5000 250 24 17
+39	5041	0.0	3	4723 273 31 14
+40	4788	0.0	3	4534 199 38 17
+41	4599	0.0	3	4373 193 24 9
+42	4340	0.0	3	4114 183 26 17
+43	4118	0.0	3	3878 206 19 15
+44	3714	0.0	3	3530 154 20 10
+45	3604	0.0	3	3408 174 9 13
+46	3427	0.0	3	3246 152 23 6
+47	3195	0.0	3	3012 164 11 8
+48	3042	0.0	3	2870 149 11 12
+49	2884	0.0	3	2733 123 16 12
+50	2573	0.0	3	2421 123 18 11
+51	2485	0.0	3	2334 132 11 8
+52	2233	0.0	3	2116 99 14 4
+53	2117	0.0	3	2005 94 15 3
+54	1851	0.0	3	1745 86 17 3
+55	1654	0.0	3	1565 76 8 5
+56	1526	0.0	3	1427 81 10 8
+57	1490	0.0	3	1408 67 11 4
+58	1377	0.0	3	1288 77 7 5
+59	1320	0.0	3	1239 73 4 4
+60	1217	0.0	3	1150 57 6 4
+61	1119	0.0	3	1048 61 8 2
+62	998	0.0	3	949 43 2 4
+63	935	0.0	3	882 46 3 4
+64	812	0.0	3	756 48 5 3
+65	775	0.0	3	728 37 5 5
+66	672	0.0	3	625 39 6 2
+67	580	0.0	3	541 32 6 1
+68	572	0.0	3	543 21 6 2
+69	537	0.0	3	503 29 4 1
+70	472	0.0	3	441 27 4
+71	392	0.0	3	367 22 3
+72	365	0.0	3	342 16 5 2
+73	298	0.0	3	288 7 2 1
+74	231	0.0	3	218 8 3 2
+75	125	0.0	3	116 9
+76	98	0.0	3	93 3 2
+77	74	0.0	3	67 5 2
+78	49	0.0	3	43 2 1 3
+79	34	0.0	3	32 0 1 1
+80	19	0.0	3	18 1
+81	9	0.0	3	9
+82	6	0.0	3	5 0 0 1
+83	7	0.0	3	6 0 1
+84	2	0.0	3	2
+85	3	0.0	3	3
+86	6	0.0	3	5 1
+87	5	0.0	3	4 1
+88	1	0.0	3	1
+89	10	0.0	3	10
+91	4	0.0	3	4
+92	3	0.0	3	2 1
+93	2	0.0	3	1 1
+94	3	0.0	3	2 1
+95	6	0.0	3	3 2 0 1
+96	6	0.0	3	4 1 0 1
+97	1	0.0	3	0 1
+98	1	0.0	3	0 1
+99	2	0.0	3	2
+100	1	0.0	3	0 0 0 1
+101	31194	0.0	3	1 28284 2675 234
+	Command being timed: "cutadapt -a AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT -o /projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_31_4F_fox_S22_L008_R2_001.fastq.gz /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz -j 6"
+	User time (seconds): 78.96
+	System time (seconds): 2.17
+	Percent of CPU this job got: 671%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:12.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 167488
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 317422
+	Voluntary context switches: 74187
+	Involuntary context switches: 1230
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
