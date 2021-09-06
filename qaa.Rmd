@@ -20,47 +20,50 @@ knitr::opts_chunk$set(echo = TRUE)
 module load fastqc/0.11.5
 
 # run fastqc
-fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz \
-  /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz \
-  -t 6 \
+fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz
+  /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz
+  -t 6
   -o fox
-fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R1_001.fastq.gz \
-  /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R2_001.fastq.gz \
-  -o control \
+  
+fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R1_001.fastq.gz
+  /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R2_001.fastq.gz
+  -o control
   -t 8
 
 
-# move html output here
+# copy html output to local folder
 scp jadler2@talapas-ln1.uoregon.edu:/projects/bgmp/jadler2/bioinfo/Bi623/QAA/fox/*.html .
 scp jadler2@talapas-ln1.uoregon.edu:/projects/bgmp/jadler2/bioinfo/Bi623/QAA/control/*.html .
 ```
+
+The per-base N quality graphd are consisten with the per-base quality graphs in that read 1 has higher N content relative to the other bases, in alignment with the lower per-base quality score relative to the other bases.
 
 ### 2. 
 
 ```
 # run histogram generator from demultiplex assignment-the-first
-sbatch --output=fox_R1_histogram.out \
-  --time=10:00:00 \
-  /projects/bgmp/jadler2/bioinfo/Bi622/Demultiplex/Assignment-the-first/histogram_generator.srun \
-  /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz \
-  101 \
-  3788343 \
-  31_4F_fox_S22_L008_R1_001.histogram.png \
+sbatch --output=fox_R1_histogram.out
+  --time=10:00:00
+  /projects/bgmp/jadler2/bioinfo/Bi622/Demultiplex/Assignment-the-first/histogram_generator.srun
+  /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz
+  101
+  3788343
+  31_4F_fox_S22_L008_R1_001.histogram.png
   fox_R1
 ```
-![](31_4F_fox_S22_L008_R1_001.histogram.png)
+![](images/31_4F_fox_S22_L008_R1_001.histogram.png)
   
 ```
-sbatch --output=fox_R2_histogram.out \
-  --time=10:00:00 /projects/bgmp/jadler2/bioinfo/Bi622/Demultiplex/Assignment-the-first/histogram_generator.srun \
-  /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz \
-  101 \
-  3788343 \
-  31_4F_fox_S22_L008_R2_001.histogram.png \
+sbatch --output=fox_R2_histogram.out
+  --time=10:00:00 /projects/bgmp/jadler2/bioinfo/Bi622/Demultiplex/Assignment-the-first/histogram_generator.srun
+  /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz
+  101
+  3788343
+  31_4F_fox_S22_L008_R2_001.histogram.png
   fox_R2
 
 ```
-![](31_4F_fox_S22_L008_R2_001.histogram.png)
+![](images/31_4F_fox_S22_L008_R2_001.histogram.png)
 
 Yes, the output and runtimes do differ. The fastqc graphs include box and whiskers to demonstrate the range of values found at each base. The fastqc charts also include green (28-41), yellow (20-28), and red (0-20) areas that correspond to quality level. This is helpful in providing the viewer with a quick reference of quality level at each base. 
 
@@ -100,16 +103,16 @@ Trimmomatic = 0.39
 #### 5. 
 
 ```
-/usr/bin/time -v cutadapt \
-    -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA \
-    -o trimmed_31_4F_fox_S22_L008_R1_001.fastq.gz \
-    /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz \
+/usr/bin/time -v cutadapt
+    -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA
+    -o trimmed_31_4F_fox_S22_L008_R1_001.fastq.gz
+    /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz
     -j 6
 
-/usr/bin/time -v cutadapt \
-    -a AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT \
-    -o trimmed_31_4F_fox_S22_L008_R2_001.fastq.gz \
-    /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz \
+/usr/bin/time -v cutadapt
+    -a AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT
+    -o trimmed_31_4F_fox_S22_L008_R2_001.fastq.gz
+    /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz
     -j 6
 ```
 
@@ -126,26 +129,26 @@ zcat trimmed_31_4F_fox_S22_L008_R2_001.fastq.gz | grep -e "AGATCGGAAGAGCGTCGTGTA
 #### 6. 
 
 ```
-java -jar /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trimmomatic-0.39/trimmomatic-0.39.jar PE \
-  -threads 8 \
-  /projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_31_4F_fox_S22_L008_R1_001.fastq.gz \
-  /projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_31_4F_fox_S22_L008_R2_001.fastq.gz \
-  -baseout Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001.fastq.gz \
-  LEADING:3 \
-  TRAILING:3 \
-  SLIDINGWINDOW:5:15 \
+java -jar /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trimmomatic-0.39/trimmomatic-0.39.jar PE
+  -threads 8
+  /projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_31_4F_fox_S22_L008_R1_001.fastq.gz
+  /projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_31_4F_fox_S22_L008_R2_001.fastq.gz
+  -baseout Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001.fastq.gz
+  LEADING:3
+  TRAILING:3
+  SLIDINGWINDOW:5:15
   MINLEN:35
 ```
 
 #### 7.
 ```
-./dual_histogram.py \
-        -i1 Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001_1P.fastq.gz \
-        -i2 Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001_2P.fastq.gz \
-        -o trimmed_lengths.histogram.png \
+./dual_histogram.py
+        -i1 Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001_1P.fastq.gz
+        -i2 Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001_2P.fastq.gz
+        -o trimmed_lengths.histogram.png
         -t "Read 1, Read 2 distribution of trimmed lengths
 ```
-![](trimmed_lengths.histogram.png)
+![](images/trimmed_lengths.histogram.png)
 
 # Part 3 - Alignment and strand-specificity
 
@@ -167,23 +170,23 @@ wget http://ftp.ensembl.org/pub/release-104/fasta/mus_musculus/dna/Mus_musculus.
 wget http://ftp.ensembl.org/pub/release-104/gtf/mus_musculus/Mus_musculus.GRCm39.104.gtf.gz
 
 # generate mouse db
-STAR --runThreadN 8 \
-  --runMode genomeGenerate \
-  --genomeDir /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a \
-  --genomeFastaFiles /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa \
+STAR --runThreadN 8
+  --runMode genomeGenerate
+  --genomeDir /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a
+  --genomeFastaFiles /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa
   --sjdbGTFfile /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.104.gtf
 
 # align trimmed reads
-STAR --runThreadN 8 \
-  --runMode alignReads \
-  --outFilterMultimapNmax 3 \
-  --outSAMunmapped Within KeepPairs \
-  --alignIntronMax 1000000 \
-  --alignMatesGapMax 1000000 \
-  --readFilesCommand zcat \
-  --readFilesIn /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001_1P.fastq.gz \
-  /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001_2P.fastq.gz \
-  --genomeDir /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a \
+STAR --runThreadN 8
+  --runMode alignReads
+  --outFilterMultimapNmax 3
+  --outSAMunmapped Within KeepPairs
+  --alignIntronMax 1000000
+  --alignMatesGapMax 1000000
+  --readFilesCommand zcat
+  --readFilesIn /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001_1P.fastq.gz
+  /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001_2P.fastq.gz
+  --genomeDir /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a
   --outFileNamePrefix ./align/
 ```
 
@@ -192,8 +195,9 @@ STAR --runThreadN 8 \
 
 ```
 # determine mapped vs unmapped 
-/projects/bgmp/jadler2/bioinfo/Bi621/PS/ps8-adler-sudo/sam_filter.py -f /projects/bgmp/jadler2/bioinfo/Bi623/QAA/align/Aligned.out.sam \
-  -o /projects/bgmp/jadler2/bioinfo/Bi623/QAA/map_v_unmap.txt"
+/projects/bgmp/jadler2/bioinfo/Bi621/PS/ps8-adler-sudo/sam_filter.py 
+  -f /projects/bgmp/jadler2/bioinfo/Bi623/QAA/align/Aligned.out.sam
+  -o /projects/bgmp/jadler2/bioinfo/Bi623/QAA/map_v_unmap.txt
 
 ```
 
