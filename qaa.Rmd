@@ -51,21 +51,21 @@ fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1
 
 ##### Read 1:
 
-![**Figure:** Per-base quality content '31_4F_fox_S22_L008_R1_001'](images/31_4F_fox_S22_L008_R1_001.fastqc_base_quality.png)
+![Per-base quality content '31_4F_fox_S22_L008_R1_001'](images/31_4F_fox_S22_L008_R1_001.fastqc_base_quality.png)
 
 <br>
 
-![**Figure:** Per-base N content '31_4F_fox_S22_L008_R1_001'](images/31_4F_fox_S22_L008_R1_001.fastqc_n_content.png)
+![Per-base N content '31_4F_fox_S22_L008_R1_001'](images/31_4F_fox_S22_L008_R1_001.fastqc_n_content.png)
 
 <br>
 
 ##### Read 2:
 
-![**Figure:** Per-base quality content '31_4F_fox_S22_L008_R2_001'](images/31_4F_fox_S22_L008_R2_001.fastqc_base_quality.png)
+![Per-base quality content '31_4F_fox_S22_L008_R2_001'](images/31_4F_fox_S22_L008_R2_001.fastqc_base_quality.png)
 
 <br>
 
-![**Figure:** Per-base N content '31_4F_fox_S22_L008_R2_001'](images/31_4F_fox_S22_L008_R2_001.fastqc_n_content.png)
+![Per-base N content '31_4F_fox_S22_L008_R2_001'](images/31_4F_fox_S22_L008_R2_001.fastqc_n_content.png)
 
 <br>
 
@@ -80,21 +80,21 @@ fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L00
 
 ##### Read 1:
 
-![**Figure:** Per-base quality content '23_4A_control_S17_L008_R1_001'](images/23_4A_control_S17_L008_R1_001.fastqc_base_quality.png)
+![Per-base quality content '23_4A_control_S17_L008_R1_001'](images/23_4A_control_S17_L008_R1_001.fastqc_base_quality.png)
 
 <br>
 
-![**Figure:** Per-base N content '23_4A_control_S17_L008_R1_001'](images/23_4A_control_S17_L008_R1_001.fastqc_n_content.png)
+![Per-base N content '23_4A_control_S17_L008_R1_001'](images/23_4A_control_S17_L008_R1_001.fastqc_n_content.png)
 
 <br>
 
 ##### Read 2:
 
-![**Figure:** Per-base quality content '23_4A_control_S17_L008_R2_001'](images/23_4A_control_S17_L008_R2_001.fastqc_base_quality.png)
+![Per-base quality content '23_4A_control_S17_L008_R2_001'](images/23_4A_control_S17_L008_R2_001.fastqc_base_quality.png)
 
 <br>
 
-![**Figure:** Per-base N content '23_4A_control_S17_L008_R2_001'](images/23_4A_control_S17_L008_R2_001.fastqc_n_content.png)
+![Per-base N content '23_4A_control_S17_L008_R2_001'](images/23_4A_control_S17_L008_R2_001.fastqc_n_content.png)
 
 <br>
 
