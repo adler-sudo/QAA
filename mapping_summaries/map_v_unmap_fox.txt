@@ -1,0 +1,3 @@
+summary of sam file: /projects/bgmp/jadler2/bioinfo/Bi623/QAA/align/fox/Aligned.out.sam
+mapped reads: 6969878
+unmapped reads: 225938
