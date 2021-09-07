@@ -4,31 +4,36 @@ author: "James Adler"
 date: "9/1/2021"
 output:
   pdf_document: default
-  html_document: default
+  html_document:
+    df_print: paged
+header-includes: \usepackage{placeins}
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(fig.pos = 'H')
 ```
 
 
 # Part 1 - Read quality score distributions
 
+
+
 ### Files - referred to as 'Fox' and 'Control' files throughout report
 
-#### Fox files
-
+**Fox Files**
 
 * /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz
 
 * /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz
 
 
-#### Control files
+**Control Files**
 
 * /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R1_001.fastq.gz
 
 * /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R2_001.fastq.gz
+
 
 
 ## 1. Fastqc run
@@ -38,9 +43,7 @@ knitr::opts_chunk$set(echo = TRUE)
 module load fastqc/0.11.5
 ```
 
-### Fastqc graphs
-
-#### Fox files
+**Fastqc Command Fox Files:**
 
 ```
 fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz \
@@ -49,7 +52,7 @@ fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1
     -t 8
 ```
 
-##### Read 1:
+**Fox Read 1 Results:**
 
 ![Per-base quality content '31_4F_fox_S22_L008_R1_001'](images/31_4F_fox_S22_L008_R1_001.fastqc_base_quality.png)
 
@@ -59,7 +62,8 @@ fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1
 
 <br>
 
-##### Read 2:
+
+**Fox Read 2 Results:**
 
 ![Per-base quality content '31_4F_fox_S22_L008_R2_001'](images/31_4F_fox_S22_L008_R2_001.fastqc_base_quality.png)
 
@@ -69,7 +73,7 @@ fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1
 
 <br>
 
-#### Control files
+**Fastqc Command Control Files:**
 
 ```
 fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R1_001.fastq.gz \
@@ -78,7 +82,7 @@ fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L00
     -t 8
 ```
 
-##### Read 1:
+**Control Read 2 Results:**
 
 ![Per-base quality content '23_4A_control_S17_L008_R1_001'](images/23_4A_control_S17_L008_R1_001.fastqc_base_quality.png)
 
@@ -88,7 +92,7 @@ fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L00
 
 <br>
 
-##### Read 2:
+**Control Read 2 Results:**
 
 ![Per-base quality content '23_4A_control_S17_L008_R2_001'](images/23_4A_control_S17_L008_R2_001.fastqc_base_quality.png)
 
@@ -104,10 +108,7 @@ The per-base N quality graphs are consistent with the per-base quality graphs in
 
 ## 2. Histogram generator
 
-### Fox files
-
-
-#### Read 1
+**Fox Read 1:**
 
 ```
 /projects/bgmp/jadler2/bioinfo/Bi623/QAA/python_scripts/histogram_generator.py \
@@ -117,12 +118,11 @@ The per-base N quality graphs are consistent with the per-base quality graphs in
   -o images/31_4F_fox_S22_L008_R1_001.histogram.png \
   -t "Fox Read 1"
 ```
-![**Figure**: Distribution of lengths for untrimmed reads '31_4F_fox_S22_L008_R1_001'](images/31_4F_fox_S22_L008_R1_001.histogram.png)
+![ Distribution of lengths for untrimmed reads '31_4F_fox_S22_L008_R1_001'](images/31_4F_fox_S22_L008_R1_001.histogram.png)
 
 <br>
 
-
-#### Read 2
+**Fox Read 2:**
 
 ```
 /projects/bgmp/jadler2/bioinfo/Bi623/QAA/python_scripts/histogram_generator.py \
@@ -133,13 +133,12 @@ The per-base N quality graphs are consistent with the per-base quality graphs in
   -t "Fox Read 2"
 
 ```
-![**Figure**: Distribution of lengths for untrimmed reads '31_4F_fox_S22_L008_R2_001'](images/31_4F_fox_S22_L008_R2_001.histogram.png)
+![ Distribution of lengths for untrimmed reads '31_4F_fox_S22_L008_R2_001'](images/31_4F_fox_S22_L008_R2_001.histogram.png)
 
 <br>
 
-### Control files
 
-#### Read 1
+**Control Read 1:**
 
 ```
 /projects/bgmp/jadler2/bioinfo/Bi623/QAA/python_scripts/histogram_generator.py \
@@ -150,11 +149,11 @@ The per-base N quality graphs are consistent with the per-base quality graphs in
     -t "Control Read 1"
 ```
 
-![**Figure**: Distribution of lengths for untrimmed reads '23_4A_control_S17_L008_R1_001'](images/23_4A_control_S17_L008_R1_001.histogram.png)
+![ Distribution of lengths for untrimmed reads '23_4A_control_S17_L008_R1_001'](images/23_4A_control_S17_L008_R1_001.histogram.png)
 
 <br>
 
-#### Read 2
+**Control Read 2:**
 
 ```
 /projects/bgmp/jadler2/bioinfo/Bi623/QAA/python_scripts/histogram_generator.py \
@@ -165,29 +164,23 @@ The per-base N quality graphs are consistent with the per-base quality graphs in
     -t "Control Read 2"
 ```
 
-![**Figure**: Distribution of lengths for untrimmed reads '23_4A_control_S17_L008_R2_001'](images/23_4A_control_S17_L008_R2_001.histogram.png)
+![ Distribution of lengths for untrimmed reads '23_4A_control_S17_L008_R2_001'](images/23_4A_control_S17_L008_R2_001.histogram.png)
 
 <br>
 
-Yes, the output and runtimes do differ. The fastqc graphs include box and whiskers to demonstrate the range of values found at each base. The fastqc charts also include green (28-41), yellow (20-28), and red (0-20) areas that correspond to quality level. This is helpful in providing the viewer with a quick reference of quality level at each base. 
+**Runtime difference:** Yes, the output and runtimes do differ. The fastqc graphs include box and whiskers to demonstrate the range of values found at each base. The fastqc charts also include green (28-41), yellow (20-28), and red (0-20) areas that correspond to quality level. This is helpful in providing the viewer with a quick reference of quality level at each base. 
 
-### Fox files
+**Fox files:** The histogram generator runs for the fox files each took about 3 minutes 45 seconds and only produced the one histogram. The fastqc runs can be run with multiple CPUs using the -t flag. Running the two files with -t 8 results in total runtime of 29 seconds and produces substantially more information relative to our histogram generator script.
 
-The histogram generator runs for the fox files each took about 3 minutes 45 seconds and only produced the one histogram. The fastqc runs can be run with multiple CPUs using the -t flag. Running the two files with -t 8 results in total runtime of 29 seconds and produces substantially more information relative to our histogram generator script.
-
-### Control files
-
-The histogram generator runs for the control files each took about 40 minutes. Running fastqc on the two controls files with 8 CPUs result sin total runtime of 3 minutes 45 seconds and produces substantially more information relative to our histogram generator script.
+**Control files:** The histogram generator runs for the control files each took about 40 minutes. Running fastqc on the two controls files with 8 CPUs result sin total runtime of 3 minutes 45 seconds and produces substantially more information relative to our histogram generator script.
 
 
 
 ## 3. Comment on the overall data quality of the two libraries
 
-#### Fox files
-The quality of each of the read files is high. Neither was flagged for poor quality. The mean score is in the green for each of the read files. The 31_4F_fox_S22_L008_R2_001.fastq.gz file does have some whiskers that drop down into the 'yellow' zone (less than 28 mean quality score), but the mean and majority quality scores hover between 34-41.
+**Fox files:** The quality of each of the read files is high. Neither was flagged for poor quality. The mean score is in the green for each of the read files. The 31_4F_fox_S22_L008_R2_001.fastq.gz file does have some whiskers that drop down into the 'yellow' zone (less than 28 mean quality score), but the mean and majority quality scores hover between 34-41.
 
-#### Control files
-The quality for each of the read files is high, though R2 does have quite a few whiskers extending into the yellow range and one whisker that extends into the red range. The mean quality score across all bases are all in the green, though the 1st base mean quality is around 30, the lowest mean quality score of any of the four files we processed.
+**Control files:** The quality for each of the read files is high, though R2 does have quite a few whiskers extending into the yellow range and one whisker that extends into the red range. The mean quality score across all bases are all in the green, though the 1st base mean quality is around 30, the lowest mean quality score of any of the four files we processed.
 
 
 
@@ -215,7 +208,7 @@ conda install Trimmomatic
 
 ## 5. Adapter trim with cutadapt
 
-### Fox files
+**Adapter Trim Fox Files:**
 
 ```
 cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA \
@@ -226,7 +219,7 @@ cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA \
   /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz
 ```
 
-### Control files
+**Adapter Trim Control Files:**
 
 ```
 cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA \
@@ -237,9 +230,7 @@ cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA \
   /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R2_001.fastq.gz
 ```
 
-
-
-### Confirm adapter sequences were removed
+**Confirm adapter sequences were removed:**
 
 ```
 zcat trimmed_31_4F_fox_S22_L008_R1_001.fastq.gz | grep "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA"
@@ -252,23 +243,15 @@ zcat trimmed_23_4A_control_S17_L008_R2_001.fastq.gz | grep "AGATCGGAAGAGCGTCGTGT
 ```
 
 
+**Results of adapter check:** All returns to the above commands returned nothing, confirming that adapter sequences are not present in the adapter-trimmed files.
 
-### Results of adapter check:
-
-All returns to the above commands returned nothing, confirming that adapter sequences are not present in the adapter-trimmed files.
-
+**Reasoning for choosing commands for adapter check:** I chose to use these commands because I want to confirm that the adapter sequence was removed from the reads and the trimmed reads output to a new file.
 
 
 
-### Reasoning for choosing commands for adapter check:
+**What proportion of reads were trimmed?**
 
-I chose to use these commands because I want to confirm that the adapter sequence was removed from the reads and the trimmed reads output to a new file.
-
-
-
-### What proportion of reads were trimmed?
-
-#### Fox files
+**Fox File Adapter Trim Stats:**
 
 Total read pairs processed:          3,788,343
 
@@ -276,7 +259,8 @@ Total read pairs processed:          3,788,343
   
   Read 2 with adapter:                 482,503 (12.7%)
 
-#### Control files
+
+**Control File Adapter Trim Stats:**
 
 Total read pairs processed:         44,303,262
 
@@ -286,11 +270,11 @@ Total read pairs processed:         44,303,262
   
   
   
-  
+
 
 ## 6. Trimmomatic runs
 
-### Fox files
+**Fox File Trimmomatic Command:**
 
 ```
 java -jar /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trimmomatic-0.39/trimmomatic-0.39.jar PE \
@@ -306,7 +290,7 @@ java -jar /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trimmomatic-0.39/trimmomatic-
 
 
 
-### Control files
+**Control File Trimmomatic Command:**
 
 ```
 java -jar /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trimmomatic-0.39/trimmomatic-0.39.jar PE \
@@ -324,8 +308,6 @@ java -jar /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trimmomatic-0.39/trimmomatic-
 
 ## 7. Distribution of length of trimmed sequences in each read for each group
 
-### Fox reads
-
 ```
 ./python_scripts/dual_histogram.py \
   -i1 /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001_1P.fastq.gz \
@@ -336,11 +318,10 @@ java -jar /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trimmomatic-0.39/trimmomatic-
   -t "Fox Read 1, Read 2 Distribution of Trimmed Lengths"
 ```
 
-![**Figure**: Distribution of lengths of '31_4F_fox_S22_L008_R1_001' and '31_4F_fox_S22_L008_R2_001' reads following adapter and quality trimming.](images/trimmed_lengths_fox.histogram.png)
+![ Distribution of lengths of '31_4F_fox_S22_L008_R1_001' and '31_4F_fox_S22_L008_R2_001' reads following adapter and quality trimming.](images/trimmed_lengths_fox.histogram.png)
 
 <br>
 
-### Control reads
 
 ```
 ./python_scripts/dual_histogram.py \
@@ -352,21 +333,14 @@ java -jar /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trimmomatic-0.39/trimmomatic-
   -t "Control Read 1, Read 2 Distribution of Trimmed Lengths"
 ```
 
-![**Figure**: Distribution of lengths of '23_4A_control_S17_L008_R1_001' and '23_4A_control_S17_L008_R2_001' reads following adapter and quality trimming.](images/trimmed_lengths_control.histogram.png)
+![ Distribution of lengths of '23_4A_control_S17_L008_R1_001' and '23_4A_control_S17_L008_R2_001' reads following adapter and quality trimming.](images/trimmed_lengths_control.histogram.png)
 
 <br>
 
-### R1 or R2 adapter-trimmed at different rates?
-
-I would expect R2 to be adapter-trimmed at a higher rate. Because this read sits on the sequencer for a longer period of time, the strand is exposed to a greater amount of harsh chemicals and there are more opportunities for errors to be made, including erroneous adapter binding.
-
-
-
+**R1 or R2 adapter-trimmed at different rates?** I would expect R2 to be adapter-trimmed at a higher rate. Because this read sits on the sequencer for a longer period of time, the strand is exposed to a greater amount of harsh chemicals and there are more opportunities for errors to be made, including erroneous adapter binding.
 
 
 # Part 3 - Alignment and strand-specificity
-
-
 
 ## 8. Install new packages
 
@@ -379,11 +353,7 @@ pip install HTSeq
 ```
 
 
-
-
 ## 9. STAR mouse database creation and mapping
-
-### Grab files from ensembl and construct database
 
 ```
 # wget files
@@ -398,12 +368,7 @@ STAR --runThreadN 8
   --sjdbGTFfile /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.104.gtf
 ```
 
-
-
-
-### Align quality trimmed reads
-
-#### Fox reads
+**Align Quality Trimmed Fox Reads:**
 
 ```
 STAR --runThreadN 8 \
@@ -419,7 +384,7 @@ STAR --runThreadN 8 \
   --outFileNamePrefix ./align/fox/
 ```
 
-#### Control reads
+**Align Quality Trimmed Control Reads:**
 
 ```
 STAR --runThreadN 8 \
@@ -436,10 +401,9 @@ STAR --runThreadN 8 \
 ```
 
 
-
 ## 10. Mapped vs. unmapped reads
 
-### Fox files
+**Mapped vs. Unmapped Fox .sam:**
 
 ```
 # determine mapped vs unmapped 
@@ -449,9 +413,6 @@ STAR --runThreadN 8 \
 
 ```
 
-
-#### Summary of sam file: 
-
 file: /projects/bgmp/jadler2/bioinfo/Bi623/QAA/align/fox/Aligned.out.sam
 
 mapped reads: 6969878
@@ -459,7 +420,7 @@ mapped reads: 6969878
 unmapped reads: 225938
 
 
-### Control files
+**Mapped vs. Unmapped Control .sam:**
 
 ```
 /projects/bgmp/jadler2/bioinfo/Bi623/QAA/python_scripts/sam_filter.py \
@@ -467,21 +428,17 @@ unmapped reads: 225938
   -o /projects/bgmp/jadler2/bioinfo/Bi623/QAA/mapping_summaries/map_v_unmap_control.txt
 ```
 
-#### Summary of sam file: 
+**file:** /projects/bgmp/jadler2/bioinfo/Bi623/QAA/align/control/Aligned.out.sam
 
-file: /projects/bgmp/jadler2/bioinfo/Bi623/QAA/align/control/Aligned.out.sam
+**mapped reads:** 79473045
 
-mapped reads: 79473045
-
-unmapped reads: 4640081
+**unmapped reads:** 4640081
 
 
 
 ## 11. Count reads that map to features using htseq-count
 
-### Stranded
-
-#### Fox files
+**Stranded htseq-count Fox Files:**
 
 ```
 htseq-count -q \
@@ -491,7 +448,7 @@ htseq-count -q \
   /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.104.gtf
 ```
 
-#### Control files
+**Stranded htseq-count Control Files:**
 
 ```
 htseq-count -q \
@@ -501,9 +458,7 @@ htseq-count -q \
   /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.104.gtf
 ```
 
-### Unstranded
-
-#### Fox files
+**Untranded htseq-count Fox Files:**
 
 ```
 htseq-count -q \
@@ -513,7 +468,7 @@ htseq-count -q \
   /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.104.gtf
 ```
 
-#### Control files
+**Untranded htseq-count Control Files:**
 
 ```
 htseq-count -q \
@@ -522,12 +477,11 @@ htseq-count -q \
   /projects/bgmp/jadler2/bioinfo/Bi623/QAA/align/control/Aligned.out.sam \
   /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.104.gtf
 ```
-
 
 
 ## 12. Demonstrate whether data are strand-specific RNA-seq libraries or not
 
-### Determine number of mapped reads in each file:
+**Determine number of mapped reads in each file:**
 
 ```
 for f in $(ls); do echo $f; grep -v '^_' $f | awk '{sum+=$2} END {print sum}'; done
@@ -545,7 +499,7 @@ fox_unstranded.genecount
 2922418
 ```
 
-### Determine total reads in each file:
+**Determine total reads in each file:**
 
 ```
 for f in $(ls); do echo $f; cat $f | awk '{sum+=$2} END {print sum}'; done
@@ -563,7 +517,7 @@ fox_unstranded.genecount
 3597908
 ```
 
-### Determine percentage of reads mapped:
+**Determine percentage of reads mapped:**
 
 ```
 control_stranded.genecount
@@ -579,4 +533,4 @@ fox_unstranded.genecount
 2922418 / 3597908 = 81.0%
 ```
 
-Based on the information above, I propose the data are from unstranded library preps because only 3.6% and 5.0% of the stranded control and fox reads, respectively, map to the mouse genome, whereas, 75.0% and 81.0% of the unstranded control and fox reads, respectively, map to the mouse genome. 
+**Stranded or unstranded library prep:** I propose the data are from unstranded library preps because only 3.6% and 5.0% of the stranded control and fox reads, respectively, map to the mouse genome, whereas, 75.0% and 81.0% of the unstranded control and fox reads, respectively, map to the mouse genome. 
