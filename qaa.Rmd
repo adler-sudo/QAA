@@ -3,16 +3,12 @@ title: "QAA"
 author: "James Adler"
 date: "9/1/2021"
 output:
-  pdf_document: default
-  html_document:
-    df_print: paged
-header-includes: \usepackage{placeins}
+  rmarkdown::pdf_document:
+    fig_caption: yes        
+    includes:  
+      in_header: my_header.tex
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_chunk$set(fig.pos = 'H')
-```
+tidy.opts = list(width.cutoff = 40), tidy=TRUE
 
 
 # Part 1 - Read quality score distributions
@@ -43,6 +39,8 @@ knitr::opts_chunk$set(fig.pos = 'H')
 module load fastqc/0.11.5
 ```
 
+\newpage
+
 **Fastqc Command Fox Files:**
 
 ```
@@ -62,6 +60,7 @@ fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1
 
 <br>
 
+\newpage
 
 **Fox Read 2 Results:**
 
@@ -72,6 +71,8 @@ fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1
 ![Per-base N content '31_4F_fox_S22_L008_R2_001'](images/31_4F_fox_S22_L008_R2_001.fastqc_n_content.png)
 
 <br>
+
+\newpage
 
 **Fastqc Command Control Files:**
 
@@ -92,6 +93,8 @@ fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L00
 
 <br>
 
+\newpage
+
 **Control Read 2 Results:**
 
 ![Per-base quality content '23_4A_control_S17_L008_R2_001'](images/23_4A_control_S17_L008_R2_001.fastqc_base_quality.png)
@@ -104,7 +107,7 @@ fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L00
 
 The per-base N quality graphs are consistent with the per-base quality graphs in that base 1 has higher N content relative to the other bases. This is in alignment with the lower per-base quality score relative to the other bases.
 
-
+\newpage
 
 ## 2. Histogram generator
 
@@ -122,6 +125,8 @@ The per-base N quality graphs are consistent with the per-base quality graphs in
 
 <br>
 
+\newpage
+
 **Fox Read 2:**
 
 ```
@@ -137,6 +142,7 @@ The per-base N quality graphs are consistent with the per-base quality graphs in
 
 <br>
 
+\newpage
 
 **Control Read 1:**
 
@@ -152,6 +158,8 @@ The per-base N quality graphs are consistent with the per-base quality graphs in
 ![ Distribution of lengths for untrimmed reads '23_4A_control_S17_L008_R1_001'](images/23_4A_control_S17_L008_R1_001.histogram.png)
 
 <br>
+
+\newpage
 
 **Control Read 2:**
 
@@ -182,7 +190,7 @@ The per-base N quality graphs are consistent with the per-base quality graphs in
 
 **Control files:** The quality for each of the read files is high, though R2 does have quite a few whiskers extending into the yellow range and one whisker that extends into the red range. The mean quality score across all bases are all in the green, though the 1st base mean quality is around 30, the lowest mean quality score of any of the four files we processed.
 
-
+\newpage
 
 # Part 2 - Adaptor trimming comparison
 
@@ -251,6 +259,8 @@ zcat trimmed_23_4A_control_S17_L008_R2_001.fastq.gz | grep "AGATCGGAAGAGCGTCGTGT
 
 **What proportion of reads were trimmed?**
 
+<br>
+
 **Fox File Adapter Trim Stats:**
 
 Total read pairs processed:          3,788,343
@@ -259,6 +269,7 @@ Total read pairs processed:          3,788,343
   
   Read 2 with adapter:                 482,503 (12.7%)
 
+<br>
 
 **Control File Adapter Trim Stats:**
 
@@ -292,7 +303,7 @@ java -jar /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trimmomatic-0.39/trimmomatic-
 
 **Control File Trimmomatic Command:**
 
-```
+```{tidy=TRUE, tidy.opts=list(width.cutoff=60)}
 java -jar /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trimmomatic-0.39/trimmomatic-0.39.jar PE \
   -threads 8 \
   /projects/bgmp/jadler2/bioinfo/Bi623/QAA/adapter_trimmed/trimmed_23_4A_control_S17_L008_R1_001.fastq.gz \
@@ -305,8 +316,9 @@ java -jar /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trimmomatic-0.39/trimmomatic-
 ```
 
 
-
 ## 7. Distribution of length of trimmed sequences in each read for each group
+
+\newpage
 
 ```
 ./python_scripts/dual_histogram.py \
@@ -322,6 +334,7 @@ java -jar /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trimmomatic-0.39/trimmomatic-
 
 <br>
 
+\newpage
 
 ```
 ./python_scripts/dual_histogram.py \
@@ -339,6 +352,7 @@ java -jar /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trimmomatic-0.39/trimmomatic-
 
 **R1 or R2 adapter-trimmed at different rates?** I would expect R2 to be adapter-trimmed at a higher rate. Because this read sits on the sequencer for a longer period of time, the strand is exposed to a greater amount of harsh chemicals and there are more opportunities for errors to be made, including erroneous adapter binding.
 
+\newpage
 
 # Part 3 - Alignment and strand-specificity
 
@@ -499,6 +513,8 @@ fox_unstranded.genecount
 2922418
 ```
 
+<br>
+
 **Determine total reads in each file:**
 
 ```
@@ -517,6 +533,8 @@ fox_unstranded.genecount
 3597908
 ```
 
+<br>
+
 **Determine percentage of reads mapped:**
 
 ```
@@ -532,5 +550,7 @@ fox_stranded.genecount
 fox_unstranded.genecount
 2922418 / 3597908 = 81.0%
 ```
+
+<br>
 
 **Stranded or unstranded library prep:** I propose the data are from unstranded library preps because only 3.6% and 5.0% of the stranded control and fox reads, respectively, map to the mouse genome, whereas, 75.0% and 81.0% of the unstranded control and fox reads, respectively, map to the mouse genome. 
