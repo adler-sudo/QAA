@@ -8,7 +8,6 @@ output:
     includes:  
       in_header: my_header.tex
 ---
-tidy.opts = list(width.cutoff = 40), tidy=TRUE
 
 
 # Part 1 - Read quality score distributions
