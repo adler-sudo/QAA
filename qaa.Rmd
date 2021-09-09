@@ -1,7 +1,7 @@
 ---
 title: "QAA"
 author: "James Adler"
-date: "9/1/2021"
+date: "9/8/2021"
 output:
   rmarkdown::pdf_document:
     fig_caption: yes        
@@ -548,7 +548,7 @@ fox_unstranded.genecount
 
 <br>
 
-**Stranded or unstranded library prep:** I propose the data are from stranded library preps because the proportion of reads mapped in the 'reverse' direction for the 'fox' and 'control' reads, 84.9% and 80.7% respectively, are roughly equal to the proportion of reads mapped in each 'unstranded' run, 84.5% and 78.9% respectively, whereas, in the 'stranded' (forward) run only 4.2% and 2.67%, respectively, of the reads mapped. If the prep were unstranded, we would expect roughly equal proportions of mapped reads in the 'stranded' (forward) and 'reverse' runs.
+**Stranded or unstranded library prep:** I propose the data are from stranded library preps because the proportion of reads mapped in the 'reverse' direction for the 'fox' and 'control' reads, 84.9% and 80.7% respectively, are roughly equal to the proportion of reads mapped in each 'unstranded' run, 84.5% and 78.9% respectively, whereas, in the 'stranded' (forward) run only 4.2% and 2.67% of the reads mapped in the 'fox' and 'control' runs, respectively. If the prep were unstranded, we would expect roughly equal proportions of mapped reads in the 'stranded' (forward) and 'reverse' runs.
 
 
 
