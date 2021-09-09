@@ -1,0 +1,3 @@
+summary of sam file: /projects/bgmp/jadler2/bioinfo/Bi623/QAA/align/control/Aligned.out.sam
+mapped reads: 79473045
+unmapped reads: 4640081

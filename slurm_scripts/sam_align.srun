@@ -2,14 +2,19 @@
 
 #SBATCH --account=bgmp
 #SBATCH --partition=bgmp
+#SBATCH --time=10:00:00
+
+# inputs
+# 1 = input aligned sam file
+# 2 = desired output file
 
 # activate conda env
 conda activate QAA
 
 # define variables
-sam_filter="/projects/bgmp/jadler2/bioinfo/Bi621/PS/ps8-adler-sudo/sam_filter.py"
-input_sam_file="/projects/bgmp/jadler2/bioinfo/Bi623/QAA/align/Aligned.out.sam"
-output_summary_file="/projects/bgmp/jadler2/bioinfo/Bi623/QAA/map_v_unmap.txt"
+sam_filter="/projects/bgmp/jadler2/bioinfo/Bi623/QAA/python_scripts/sam_filter.py"
+input_sam_file=$1
+output_summary_file=$2
 
 # run
 /usr/bin/time -v $sam_filter -f $input_sam_file -o $output_summary_file

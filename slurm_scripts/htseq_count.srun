@@ -2,6 +2,13 @@
 
 #SBATCH --account=bgmp
 #SBATCH --partition=bgmp
+#SBATCH --time=10:00:00
+
+# inputs
+# 1 = stranded ("yes" or "no" or "reverse")
+# 2 = alignment file - sorted sam file
+# 3 = gtf file 
+# 4 = desired output file
 
 # activate conda environment
 conda activate QAA
@@ -15,8 +22,9 @@ input_file_type="sam"
 
 # run
 /usr/bin/time -v htseq-count \
-    -f=$input_file_type \
-    -s=$stranded \
+    -q \
+    -f $input_file_type \
+    -s $stranded \
     $alignment_file \
     $gtf_file \
-    -o $output_file
+    > $output_file
