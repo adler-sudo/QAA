@@ -30,24 +30,25 @@ output:
 * /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R2_001.fastq.gz
 
 
+\newpage
 
 ## 1. Fastqc run
 
-```
-# load fastqc module
-module load fastqc/0.11.5
-```
+<!-- ``` -->
+<!-- # load fastqc module -->
+<!-- module load fastqc/0.11.5 -->
+<!-- ``` -->
 
-\newpage
+<!-- \newpage -->
 
-**Fastqc Command Fox Files:**
+<!-- **Fastqc Command Fox Files:** -->
 
-```
-fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz \
-    /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz \
-    -o fox \
-    -t 8
-```
+<!-- ``` -->
+<!-- fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz \ -->
+<!--     /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz \ -->
+<!--     -o fox \ -->
+<!--     -t 8 -->
+<!-- ``` -->
 
 **Fox Read 1 Results:**
 
@@ -73,16 +74,16 @@ fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1
 
 \newpage
 
-**Fastqc Command Control Files:**
+<!-- **Fastqc Command Control Files:** -->
 
-```
-fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R1_001.fastq.gz \
-    /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R2_001.fastq.gz \
-    -o control \
-    -t 8
-```
+<!-- ``` -->
+<!-- fastqc /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R1_001.fastq.gz \ -->
+<!--     /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R2_001.fastq.gz \ -->
+<!--     -o control \ -->
+<!--     -t 8 -->
+<!-- ``` -->
 
-**Control Read 2 Results:**
+**Control Read 1 Results:**
 
 ![Per-base quality content '23_4A_control_S17_L008_R1_001'](images/23_4A_control_S17_L008_R1_001.fastqc_base_quality.png)
 
@@ -108,35 +109,33 @@ The per-base N quality graphs are consistent with the per-base quality graphs in
 
 \newpage
 
-## 2. Histogram generator
+## 2. Generate histograms with personal python script
 
 **Fox Read 1:**
 
-```
-/projects/bgmp/jadler2/bioinfo/Bi623/QAA/python_scripts/histogram_generator.py \
-  -f /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz \
-  -l 101 \
-  -n 3788343 \
-  -o images/31_4F_fox_S22_L008_R1_001.histogram.png \
-  -t "Fox Read 1"
-```
+<!-- ``` -->
+<!-- /projects/bgmp/jadler2/bioinfo/Bi623/QAA/python_scripts/histogram_generator.py \ -->
+<!--   -f /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz \ -->
+<!--   -l 101 \ -->
+<!--   -n 3788343 \ -->
+<!--   -o images/31_4F_fox_S22_L008_R1_001.histogram.png \ -->
+<!--   -t "Fox Read 1" -->
+<!-- ``` -->
 ![ Distribution of lengths for untrimmed reads '31_4F_fox_S22_L008_R1_001'](images/31_4F_fox_S22_L008_R1_001.histogram.png)
 
 <br>
 
-\newpage
-
 **Fox Read 2:**
 
-```
-/projects/bgmp/jadler2/bioinfo/Bi623/QAA/python_scripts/histogram_generator.py \
-  -f /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz \
-  -l 101 \
-  -n 3788343 \
-  -o images/31_4F_fox_S22_L008_R2_001.histogram.png \
-  -t "Fox Read 2"
+<!-- ``` -->
+<!-- /projects/bgmp/jadler2/bioinfo/Bi623/QAA/python_scripts/histogram_generator.py \ -->
+<!--   -f /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz \ -->
+<!--   -l 101 \ -->
+<!--   -n 3788343 \ -->
+<!--   -o images/31_4F_fox_S22_L008_R2_001.histogram.png \ -->
+<!--   -t "Fox Read 2" -->
 
-```
+<!-- ``` -->
 ![ Distribution of lengths for untrimmed reads '31_4F_fox_S22_L008_R2_001'](images/31_4F_fox_S22_L008_R2_001.histogram.png)
 
 <br>
@@ -145,31 +144,29 @@ The per-base N quality graphs are consistent with the per-base quality graphs in
 
 **Control Read 1:**
 
-```
-/projects/bgmp/jadler2/bioinfo/Bi623/QAA/python_scripts/histogram_generator.py \
-    -f /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R1_001.fastq.gz \
-    -l 101 \
-    -n 44303262 \
-    -o images/23_4A_control_S17_L008_R1_001.histogram.png \
-    -t "Control Read 1"
-```
+<!-- ``` -->
+<!-- /projects/bgmp/jadler2/bioinfo/Bi623/QAA/python_scripts/histogram_generator.py \ -->
+<!--     -f /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R1_001.fastq.gz \ -->
+<!--     -l 101 \ -->
+<!--     -n 44303262 \ -->
+<!--     -o images/23_4A_control_S17_L008_R1_001.histogram.png \ -->
+<!--     -t "Control Read 1" -->
+<!-- ``` -->
 
 ![ Distribution of lengths for untrimmed reads '23_4A_control_S17_L008_R1_001'](images/23_4A_control_S17_L008_R1_001.histogram.png)
 
 <br>
 
-\newpage
-
 **Control Read 2:**
 
-```
-/projects/bgmp/jadler2/bioinfo/Bi623/QAA/python_scripts/histogram_generator.py \
-    -f /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R2_001.fastq.gz \
-    -l 101 \
-    -n 44303262 \
-    -o images/23_4A_control_S17_L008_R2_001.histogram.png \
-    -t "Control Read 2"
-```
+<!-- ``` -->
+<!-- /projects/bgmp/jadler2/bioinfo/Bi623/QAA/python_scripts/histogram_generator.py \ -->
+<!--     -f /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R2_001.fastq.gz \ -->
+<!--     -l 101 \ -->
+<!--     -n 44303262 \ -->
+<!--     -o images/23_4A_control_S17_L008_R2_001.histogram.png \ -->
+<!--     -t "Control Read 2" -->
+<!-- ``` -->
 
 ![ Distribution of lengths for untrimmed reads '23_4A_control_S17_L008_R2_001'](images/23_4A_control_S17_L008_R2_001.histogram.png)
 
@@ -179,86 +176,83 @@ The per-base N quality graphs are consistent with the per-base quality graphs in
 
 **Fox files:** The histogram generator runs for the fox files each took about 3 minutes 45 seconds and only produced the one histogram. The fastqc runs can be run with multiple CPUs using the -t flag. Running the two files with -t 8 results in total runtime of 29 seconds and produces substantially more information relative to our histogram generator script.
 
-**Control files:** The histogram generator runs for the control files each took about 40 minutes. Running fastqc on the two controls files with 8 CPUs result sin total runtime of 3 minutes 45 seconds and produces substantially more information relative to our histogram generator script.
+**Control files:** The histogram generator runs for the control files each took about 40 minutes. Running fastqc on the two controls files with 8 CPUs results in total runtime of 3 minutes 45 seconds and produces substantially more information relative to our histogram generator script.
 
 
 
 ## 3. Comment on the overall data quality of the two libraries
 
-**Fox files:** The quality of each of the read files is high. Neither was flagged for poor quality. The mean score is in the green for each of the read files. The 31_4F_fox_S22_L008_R2_001.fastq.gz file does have some whiskers that drop down into the 'yellow' zone (less than 28 mean quality score), but the mean and majority quality scores hover between 34-41.
+**Fox files:** The quality of each of the read files is high. Neither was flagged for poor quality. The mean score is greater than 28 (green zone) for each of the read files. The ```31_4F_fox_S22_L008_R2_001.fastq.gz``` file does have some whiskers that drop down below quality score of 28 (yellow zone), indicating that there are values at the corresponding bases that fall below the quality level of 28. These are drops in quality primarily occur between bases 30-37 and 78-end-of-read, but the mean and majority of quality scores at each of the bases fall between 34-41.
 
-**Control files:** The quality for each of the read files is high, though R2 does have quite a few whiskers extending into the yellow range and one whisker that extends into the red range. The mean quality score across all bases are all in the green, though the 1st base mean quality is around 30, the lowest mean quality score of any of the four files we processed.
+**Control files:** The quality for each of the read files is high, though R2 does have many whiskers extending below 28 (yellow zone) yellow range and one whisker, at base 1, that extends below 20 (red zone), indicating that there are some quality scores that fall below each of these levels at the corresponding bases. The mean quality score across all bases are all above 28 (green zone), though the 1st base mean quality score is lower at around 30, lower than the rest of the mean quality scores in this read and the lowest value that we seen among all four files.
 
-\newpage
 
 # Part 2 - Adaptor trimming comparison
 
 
-## 4. New conda env, install new packages
+<!-- ## 4. New conda env, install new packages -->
 
-```
-# create new conda env
-conda create --name QAA python=3.9
-conda activate QAA
+<!-- ``` -->
+<!-- # create new conda env -->
+<!-- conda create --name QAA python=3.9 -->
+<!-- conda activate QAA -->
 
-# install new packages
-conda install cutadapt
-conda install Trimmomatic
-```
+<!-- # install new packages -->
+<!-- conda install cutadapt -->
+<!-- conda install Trimmomatic -->
+<!-- ``` -->
 
-### Version of cutadapt and Trimmomatic
+<!-- ### Version of cutadapt and Trimmomatic -->
 
-* cutadapt = 3.4
-* Trimmomatic = 0.39
+<!-- * cutadapt = 3.4 -->
+<!-- * Trimmomatic = 0.39 -->
 
 
 
 ## 5. Adapter trim with cutadapt
 
-**Adapter Trim Fox Files:**
+<!-- **Adapter Trim Fox Files:** -->
 
-```
-cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA \
-  -A AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT \
-  -o /projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_31_4F_fox_S22_L008_R1_001.fastq.gz \
-  -p /projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_31_4F_fox_S22_L008_R2_001.fastq.gz \
-  /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz \
-  /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz
-```
+<!-- ``` -->
+<!-- cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA \ -->
+<!--   -A AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT \ -->
+<!--   -o /projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_31_4F_fox_S22_L008_R1_001.fastq.gz \ -->
+<!--   -p /projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_31_4F_fox_S22_L008_R2_001.fastq.gz \ -->
+<!--   /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R1_001.fastq.gz \ -->
+<!--   /projects/bgmp/shared/2017_sequencing/demultiplexed/31_4F_fox_S22_L008_R2_001.fastq.gz -->
+<!-- ``` -->
 
-**Adapter Trim Control Files:**
+<!-- **Adapter Trim Control Files:** -->
 
-```
-cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA \
-  -A AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTG \
-  -o /projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_23_4A_control_S17_L008_R1_001.fastq.gz \
-  -p /projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_23_4A_control_S17_L008_R2_001.fastq.gz \
-  /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R1_001.fastq.gz \
-  /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R2_001.fastq.gz
-```
+<!-- ``` -->
+<!-- cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA \ -->
+<!--   -A AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTG \ -->
+<!--   -o /projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_23_4A_control_S17_L008_R1_001.fastq.gz \ -->
+<!--   -p /projects/bgmp/jadler2/bioinfo/Bi623/QAA/trimmed_23_4A_control_S17_L008_R2_001.fastq.gz \ -->
+<!--   /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R1_001.fastq.gz \ -->
+<!--   /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R2_001.fastq.gz -->
+<!-- ``` -->
 
-**Confirm adapter sequences were removed:**
+<!-- **Confirm adapter sequences were removed:** -->
 
-```
-zcat trimmed_31_4F_fox_S22_L008_R1_001.fastq.gz | grep "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA"
+<!-- ``` -->
+<!-- zcat trimmed_31_4F_fox_S22_L008_R1_001.fastq.gz | grep "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA" -->
 
-zcat trimmed_31_4F_fox_S22_L008_R2_001.fastq.gz | grep "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT"
+<!-- zcat trimmed_31_4F_fox_S22_L008_R2_001.fastq.gz | grep "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT" -->
 
-zcat trimmed_23_4A_control_S17_L008_R1_001.fastq.gz | grep "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA"
+<!-- zcat trimmed_23_4A_control_S17_L008_R1_001.fastq.gz | grep "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA" -->
 
-zcat trimmed_23_4A_control_S17_L008_R2_001.fastq.gz | grep "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT"
-```
-
-
-**Results of adapter check:** All returns to the above commands returned nothing, confirming that adapter sequences are not present in the adapter-trimmed files.
-
-**Reasoning for choosing commands for adapter check:** I chose to use these commands because I want to confirm that the adapter sequence was removed from the reads and the trimmed reads output to a new file.
+<!-- zcat trimmed_23_4A_control_S17_L008_R2_001.fastq.gz | grep "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT" -->
+<!-- ``` -->
 
 
+**Results of adapter check:** All returns to the check commands returned nothing, confirming that adapter sequences are not present in the adapter-trimmed files.
+
+**Reasoning for choosing commands for adapter check:** I chose to use a command that checks for the adapter sequence in the finished file because I want to confirm that the adapter sequence was removed from the raw reads file and then the reads output to a new file.
+
+\
 
 **What proportion of reads were trimmed?**
-
-<br>
 
 **Fox File Adapter Trim Stats:**
 
@@ -268,7 +262,7 @@ Total read pairs processed:          3,788,343
   
   Read 2 with adapter:                 482,503 (12.7%)
 
-<br>
+\
 
 **Control File Adapter Trim Stats:**
 
@@ -282,164 +276,160 @@ Total read pairs processed:         44,303,262
   
 
 
-## 6. Trimmomatic runs
+<!-- ## 6. Trimmomatic runs -->
 
-**Fox File Trimmomatic Command:**
+<!-- **Fox File Trimmomatic Command:** -->
 
-```
-java -jar /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trimmomatic-0.39/trimmomatic-0.39.jar PE \
-  -threads 8 \
-  /projects/bgmp/jadler2/bioinfo/Bi623/QAA/adapter_trimmed/trimmed_31_4F_fox_S22_L008_R1_001.fastq.gz \
-  /projects/bgmp/jadler2/bioinfo/Bi623/QAA/adapter_trimmed/trimmed_31_4F_fox_S22_L008_R2_001.fastq.gz \
-  -baseout /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001.fastq.gz \
-  LEADING:3 \
-  TRAILING:3 \
-  SLIDINGWINDOW:5:15 \
-  MINLEN:35
-```
+<!-- ``` -->
+<!-- java -jar /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trimmomatic-0.39/trimmomatic-0.39.jar PE \ -->
+<!--   -threads 8 \ -->
+<!--   /projects/bgmp/jadler2/bioinfo/Bi623/QAA/adapter_trimmed/trimmed_31_4F_fox_S22_L008_R1_001.fastq.gz \ -->
+<!--   /projects/bgmp/jadler2/bioinfo/Bi623/QAA/adapter_trimmed/trimmed_31_4F_fox_S22_L008_R2_001.fastq.gz \ -->
+<!--   -baseout /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001.fastq.gz \ -->
+<!--   LEADING:3 \ -->
+<!--   TRAILING:3 \ -->
+<!--   SLIDINGWINDOW:5:15 \ -->
+<!--   MINLEN:35 -->
+<!-- ``` -->
 
 
 
-**Control File Trimmomatic Command:**
+<!-- **Control File Trimmomatic Command:** -->
 
-```{tidy=TRUE, tidy.opts=list(width.cutoff=60)}
-java -jar /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trimmomatic-0.39/trimmomatic-0.39.jar PE \
-  -threads 8 \
-  /projects/bgmp/jadler2/bioinfo/Bi623/QAA/adapter_trimmed/trimmed_23_4A_control_S17_L008_R1_001.fastq.gz \
-  /projects/bgmp/jadler2/bioinfo/Bi623/QAA/adapter_tirmmed/trimmed_23_4A_control_S17_L008_R2_001.fastq.gz \
-  -baseout /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_23_4A_control_S17_L008_R1_001.fastq.gz \
-  LEADING:3 \
-  TRAILING:3 \
-  SLIDINGWINDOW:5:15 \
-  MINLEN:35
-```
+<!-- ```{tidy=TRUE, tidy.opts=list(width.cutoff=60)} -->
+<!-- java -jar /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trimmomatic-0.39/trimmomatic-0.39.jar PE \ -->
+<!--   -threads 8 \ -->
+<!--   /projects/bgmp/jadler2/bioinfo/Bi623/QAA/adapter_trimmed/trimmed_23_4A_control_S17_L008_R1_001.fastq.gz \ -->
+<!--   /projects/bgmp/jadler2/bioinfo/Bi623/QAA/adapter_tirmmed/trimmed_23_4A_control_S17_L008_R2_001.fastq.gz \ -->
+<!--   -baseout /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_23_4A_control_S17_L008_R1_001.fastq.gz \ -->
+<!--   LEADING:3 \ -->
+<!--   TRAILING:3 \ -->
+<!--   SLIDINGWINDOW:5:15 \ -->
+<!--   MINLEN:35 -->
+<!-- ``` -->
 
 
 ## 7. Distribution of length of trimmed sequences in each read for each group
 
-\newpage
-
-```
-./python_scripts/dual_histogram.py \
-  -i1 /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001_1P.fastq.gz \
-  -n1 3597908 \
-  -i2 /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001_2P.fastq.gz \
-  -n2 3597908 \
-  -o images/trimmed_lengths_fox.histogram.png \
-  -t "Fox Read 1, Read 2 Distribution of Trimmed Lengths"
-```
+<!-- ``` -->
+<!-- ./python_scripts/dual_histogram.py \ -->
+<!--   -i1 /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001_1P.fastq.gz \ -->
+<!--   -n1 3597908 \ -->
+<!--   -i2 /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001_2P.fastq.gz \ -->
+<!--   -n2 3597908 \ -->
+<!--   -o images/trimmed_lengths_fox.histogram.png \ -->
+<!--   -t "Fox Read 1, Read 2 Distribution of Trimmed Lengths" -->
+<!-- ``` -->
 
 ![ Distribution of lengths of '31_4F_fox_S22_L008_R1_001' and '31_4F_fox_S22_L008_R2_001' reads following adapter and quality trimming.](images/trimmed_lengths_fox.histogram.png)
 
 <br>
 
-\newpage
-
-```
-./python_scripts/dual_histogram.py \
-  -i1 /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_23_4A_control_S17_L008_R1_001_1P.fastq.gz \
-  -n1 42056563 \
-  -i2 /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_23_4A_control_S17_L008_R1_001_2P.fastq.gz \
-  -n2 42056563 \
-  -o images/trimmed_lengths_control.histogram.png \
-  -t "Control Read 1, Read 2 Distribution of Trimmed Lengths"
-```
+<!-- ``` -->
+<!-- ./python_scripts/dual_histogram.py \ -->
+<!--   -i1 /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_23_4A_control_S17_L008_R1_001_1P.fastq.gz \ -->
+<!--   -n1 42056563 \ -->
+<!--   -i2 /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_23_4A_control_S17_L008_R1_001_2P.fastq.gz \ -->
+<!--   -n2 42056563 \ -->
+<!--   -o images/trimmed_lengths_control.histogram.png \ -->
+<!--   -t "Control Read 1, Read 2 Distribution of Trimmed Lengths" -->
+<!-- ``` -->
 
 ![ Distribution of lengths of '23_4A_control_S17_L008_R1_001' and '23_4A_control_S17_L008_R2_001' reads following adapter and quality trimming.](images/trimmed_lengths_control.histogram.png)
 
 <br>
 
-**R1 or R2 adapter-trimmed at different rates?** I would expect R2 to be adapter-trimmed at a higher rate. Because this read sits on the sequencer for a longer period of time, the strand is exposed to a greater amount of harsh chemicals and there are more opportunities for errors to be made, including erroneous adapter binding.
+**R1 or R2 adapter-trimmed at different rates?** I would expect R2 to be adapter-trimmed at a higher rate. Because this read sits on the sequencer for a longer period of time, the strand is exposed to a greater amount of harsh chemicals and there are more opportunities for breakdown of the molecules and for errors to be made.
 
-\newpage
 
 # Part 3 - Alignment and strand-specificity
 
-## 8. Install new packages
+<!-- ## 8. Install new packages -->
 
-```
-conda install star -c bioconda
-conda install numpy
-conda install pysam
-conda install matplotlib
-pip install HTSeq
-```
+<!-- ``` -->
+<!-- conda install star -c bioconda -->
+<!-- conda install numpy -->
+<!-- conda install pysam -->
+<!-- conda install matplotlib -->
+<!-- pip install HTSeq -->
+<!-- ``` -->
 
 
-## 9. STAR mouse database creation and mapping
+<!-- ## 9. STAR mouse database creation and mapping -->
 
-```
-# wget files
-wget http://ftp.ensembl.org/pub/release-104/fasta/mus_musculus/dna/Mus_musculus.GRCm39.dna.primary_assembly.fa.gz
-wget http://ftp.ensembl.org/pub/release-104/gtf/mus_musculus/Mus_musculus.GRCm39.104.gtf.gz
+<!-- ``` -->
+<!-- # wget files -->
+<!-- wget http://ftp.ensembl.org/pub/release-104/fasta/mus_musculus/dna/Mus_musculus.GRCm39.dna.primary_assembly.fa.gz -->
+<!-- wget http://ftp.ensembl.org/pub/release-104/gtf/mus_musculus/Mus_musculus.GRCm39.104.gtf.gz -->
 
-# generate mouse db
-STAR --runThreadN 8
-  --runMode genomeGenerate
-  --genomeDir /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a
-  --genomeFastaFiles /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa
-  --sjdbGTFfile /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.104.gtf
-```
+<!-- # generate mouse db -->
+<!-- STAR --runThreadN 8 -->
+<!--   --runMode genomeGenerate -->
+<!--   --genomeDir /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a -->
+<!--   --genomeFastaFiles /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.primary_assembly.fa -->
+<!--   --sjdbGTFfile /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.104.gtf -->
+<!-- ``` -->
 
-**Align Quality Trimmed Fox Reads:**
+<!-- **Align Quality Trimmed Fox Reads:** -->
 
-```
-STAR --runThreadN 8 \
-  --runMode alignReads \
-  --outFilterMultimapNmax 3 \
-  --outSAMunmapped Within KeepPairs \
-  --alignIntronMax 1000000 \
-  --alignMatesGapMax 1000000 \
-  --readFilesCommand zcat \
-  --readFilesIn /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001_1P.fastq.gz \
-  /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001_2P.fastq.gz \
-  --genomeDir /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a \
-  --outFileNamePrefix ./align/fox/
-```
+<!-- ``` -->
+<!-- STAR --runThreadN 8 \ -->
+<!--   --runMode alignReads \ -->
+<!--   --outFilterMultimapNmax 3 \ -->
+<!--   --outSAMunmapped Within KeepPairs \ -->
+<!--   --alignIntronMax 1000000 \ -->
+<!--   --alignMatesGapMax 1000000 \ -->
+<!--   --readFilesCommand zcat \ -->
+<!--   --readFilesIn /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001_1P.fastq.gz \ -->
+<!--   /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_31_4F_fox_S22_L008_001_2P.fastq.gz \ -->
+<!--   --genomeDir /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a \ -->
+<!--   --outFileNamePrefix ./align/fox/ -->
+<!-- ``` -->
 
-**Align Quality Trimmed Control Reads:**
+<!-- **Align Quality Trimmed Control Reads:** -->
 
-```
-STAR --runThreadN 8 \
-  --runMode alignReads \
-  --outFilterMultimapNmax 3 \
-  --outSAMunmapped Within KeepPairs \
-  --alignIntronMax 1000000 \
-  --alignMatesGapMax 1000000 \
-  --readFilesCommand zcat \
-  --readFilesIn /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_23_4A_control_S17_L008_R1_001_1P.fastq.gz \
-  /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_23_4A_control_S17_L008_R1_001_2P.fastq.gz \
-  --genomeDir //projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a \
-  --outFileNamePrefix ./align/control/
-```
+<!-- ``` -->
+<!-- STAR --runThreadN 8 \ -->
+<!--   --runMode alignReads \ -->
+<!--   --outFilterMultimapNmax 3 \ -->
+<!--   --outSAMunmapped Within KeepPairs \ -->
+<!--   --alignIntronMax 1000000 \ -->
+<!--   --alignMatesGapMax 1000000 \ -->
+<!--   --readFilesCommand zcat \ -->
+<!--   --readFilesIn /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_23_4A_control_S17_L008_R1_001_1P.fastq.gz \ -->
+<!--   /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Trim_Reads/quality_trimmed_23_4A_control_S17_L008_R1_001_2P.fastq.gz \ -->
+<!--   --genomeDir //projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.dna.ens.104.STAR_2.7.9a \ -->
+<!--   --outFileNamePrefix ./align/control/ -->
+<!-- ``` -->
 
 
 ## 10. Mapped vs. unmapped reads
 
 **Mapped vs. Unmapped Fox .sam:**
 
-```
-# determine mapped vs unmapped 
-/projects/bgmp/jadler2/bioinfo/Bi623/QAA/python_scripts/sam_filter.py \
-  -f /projects/bgmp/jadler2/bioinfo/Bi623/QAA/align/fox/Aligned.out.sam \
-  -o /projects/bgmp/jadler2/bioinfo/Bi623/QAA/mapping_summaries/map_v_unmap_fox.txt"
+<!-- ``` -->
+<!-- # determine mapped vs unmapped  -->
+<!-- /projects/bgmp/jadler2/bioinfo/Bi623/QAA/python_scripts/sam_filter.py \ -->
+<!--   -f /projects/bgmp/jadler2/bioinfo/Bi623/QAA/align/fox/Aligned.out.sam \ -->
+<!--   -o /projects/bgmp/jadler2/bioinfo/Bi623/QAA/mapping_summaries/map_v_unmap_fox.txt" -->
 
-```
+<!-- ``` -->
 
-file: /projects/bgmp/jadler2/bioinfo/Bi623/QAA/align/fox/Aligned.out.sam
+**file:** /projects/bgmp/jadler2/bioinfo/Bi623/QAA/align/fox/Aligned.out.sam
 
-mapped reads: 6969878
+**mapped reads:** 6969878
 
-unmapped reads: 225938
+**unmapped reads:** 225938
 
+\
 
 **Mapped vs. Unmapped Control .sam:**
 
-```
-/projects/bgmp/jadler2/bioinfo/Bi623/QAA/python_scripts/sam_filter.py \
-  -f /projects/bgmp/jadler2/bioinfo/Bi623/QAA/align/control/Aligned.out.sam \
-  -o /projects/bgmp/jadler2/bioinfo/Bi623/QAA/mapping_summaries/map_v_unmap_control.txt
-```
+<!-- ``` -->
+<!-- /projects/bgmp/jadler2/bioinfo/Bi623/QAA/python_scripts/sam_filter.py \ -->
+<!--   -f /projects/bgmp/jadler2/bioinfo/Bi623/QAA/align/control/Aligned.out.sam \ -->
+<!--   -o /projects/bgmp/jadler2/bioinfo/Bi623/QAA/mapping_summaries/map_v_unmap_control.txt -->
+<!-- ``` -->
 
 **file:** /projects/bgmp/jadler2/bioinfo/Bi623/QAA/align/control/Aligned.out.sam
 
@@ -449,107 +439,116 @@ unmapped reads: 225938
 
 
 
-## 11. Count reads that map to features using htseq-count
+<!-- ## 11. Count reads that map to features using htseq-count -->
 
-**Stranded htseq-count Fox Files:**
+<!-- **Stranded htseq-count Fox Files:** -->
 
-```
-htseq-count -q \
-  -f sam \
-  -s yes \
-  /projects/bgmp/jadler2/bioinfo/Bi623/QAA/align/fox/Aligned.out.sam \
-  /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.104.gtf
-```
+<!-- ``` -->
+<!-- htseq-count -q \ -->
+<!--   -f sam \ -->
+<!--   -s yes \ -->
+<!--   /projects/bgmp/jadler2/bioinfo/Bi623/QAA/align/fox/Aligned.out.sam \ -->
+<!--   /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.104.gtf -->
+<!-- ``` -->
 
-**Stranded htseq-count Control Files:**
+<!-- **Stranded htseq-count Control Files:** -->
 
-```
-htseq-count -q \
-  -f sam \
-  -s yes \
-  /projects/bgmp/jadler2/bioinfo/Bi623/QAA/align/control/Aligned.out.sam \
-  /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.104.gtf
-```
+<!-- ``` -->
+<!-- htseq-count -q \ -->
+<!--   -f sam \ -->
+<!--   -s yes \ -->
+<!--   /projects/bgmp/jadler2/bioinfo/Bi623/QAA/align/control/Aligned.out.sam \ -->
+<!--   /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.104.gtf -->
+<!-- ``` -->
 
-**Untranded htseq-count Fox Files:**
+<!-- **Untranded htseq-count Fox Files:** -->
 
-```
-htseq-count -q \
-  -f sam \
-  -s no \
-  /projects/bgmp/jadler2/bioinfo/Bi623/QAA/align/fox/Aligned.out.sam \
-  /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.104.gtf
-```
+<!-- ``` -->
+<!-- htseq-count -q \ -->
+<!--   -f sam \ -->
+<!--   -s no \ -->
+<!--   /projects/bgmp/jadler2/bioinfo/Bi623/QAA/align/fox/Aligned.out.sam \ -->
+<!--   /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.104.gtf -->
+<!-- ``` -->
 
-**Untranded htseq-count Control Files:**
+<!-- **Untranded htseq-count Control Files:** -->
 
-```
-htseq-count -q \
-  -f sam \
-  -s no \
-  /projects/bgmp/jadler2/bioinfo/Bi623/QAA/align/control/Aligned.out.sam \
-  /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.104.gtf
-```
+<!-- ``` -->
+<!-- htseq-count -q \ -->
+<!--   -f sam \ -->
+<!--   -s no \ -->
+<!--   /projects/bgmp/jadler2/bioinfo/Bi623/QAA/align/control/Aligned.out.sam \ -->
+<!--   /projects/bgmp/jadler2/bioinfo/Bi623/QAA/Mus_musculus.GRCm39.104.gtf -->
+<!-- ``` -->
 
 
 ## 12. Demonstrate whether data are strand-specific RNA-seq libraries or not
 
 **Determine number of mapped reads in each file:**
 
+<!-- ``` -->
+<!-- for f in $(ls); do echo $f; grep -v '^_' $f | awk '{sum+=$2} END {print sum}'; done -->
+<!-- control_reverse.genecount -->
+<!-- 65575631 -->
+<!-- control_stranded.genecount -->
+<!-- 2173292 -->
+<!-- control_unstranded.genecount -->
+<!-- 64101648 -->
+<!-- fox_reverse.genecount -->
+<!-- 5686010 -->
+<!-- fox_stranded.genecount -->
+<!-- 282362 -->
+<!-- fox_unstranded.genecount -->
+<!-- 5654669 -->
+<!-- ``` -->
+
+<!-- <br> -->
+
+<!-- **Determine total reads in each file:** -->
+
+<!-- ``` -->
+<!-- for f in $(ls); do echo $f; cat $f | awk '{sum+=$2} END {print sum}'; done -->
+<!-- control_reverse.genecount -->
+<!-- 81286723 -->
+<!-- control_stranded.genecount -->
+<!-- 81286723 -->
+<!-- control_unstranded.genecount -->
+<!-- 81286723 -->
+<!-- fox_reverse.genecount -->
+<!-- 6695837 -->
+<!-- fox_stranded.genecount -->
+<!-- 6695837 -->
+<!-- fox_unstranded.genecount -->
+<!-- 6695837 -->
+<!-- ``` -->
+
+<!-- <br> -->
+
+<!-- **Determine percentage of reads mapped:** -->
+
 ```
-for f in $(ls); do echo $f; grep -v '^_' $f | awk '{sum+=$2} END {print sum}'; done
+control_reverse.genecount
+65575631 / 81286723 = 80.7%
 
 control_stranded.genecount
-1516759
+2173292 / 81286723 = 2.67%
 
 control_unstranded.genecount
-31747007
+64101648 / 81286723 = 78.9%
+
+fox_reverse.genecount
+5686010 / 6695837 = 84.9%
 
 fox_stranded.genecount
-180499
+282362 / 6695837 = 4.2%
 
 fox_unstranded.genecount
-2922418
+5654669 / 6695837 = 84.5%
 ```
 
 <br>
 
-**Determine total reads in each file:**
+**Stranded or unstranded library prep:** I propose the data are from stranded library preps because the proportion of reads mapped in the 'reverse' direction for the 'fox' and 'control' reads, 84.9% and 80.7% respectively, are roughly equal to the proportion of reads mapped in each 'unstranded' run, 84.5% and 78.9% respectively, whereas, in the 'stranded' (forward) run only 4.2% and 2.67%, respectively, of the reads mapped. If the prep were unstranded, we would expect roughly equal proportions of mapped reads in the 'stranded' (forward) and 'reverse' runs.
 
-```
-for f in $(ls); do echo $f; cat $f | awk '{sum+=$2} END {print sum}'; done
 
-control_stranded.genecount
-42056563
 
-control_unstranded.genecount
-42056563
-
-fox_stranded.genecount
-3597908
-
-fox_unstranded.genecount
-3597908
-```
-
-<br>
-
-**Determine percentage of reads mapped:**
-
-```
-control_stranded.genecount
-1516759 / 42056563 = 3.6%
-
-control_unstranded.genecount
-31747007 / 42056563 = 75.0%
-
-fox_stranded.genecount
-180499 / 3597908 = 5.0%
-
-fox_unstranded.genecount
-2922418 / 3597908 = 81.0%
-```
-
-<br>
-
-**Stranded or unstranded library prep:** I propose the data are from unstranded library preps because only 3.6% and 5.0% of the stranded control and fox reads, respectively, map to the mouse genome, whereas, 75.0% and 81.0% of the unstranded control and fox reads, respectively, map to the mouse genome. 
