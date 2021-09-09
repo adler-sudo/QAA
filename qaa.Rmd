@@ -54,11 +54,11 @@ output:
 
 ![Per-base quality content '31_4F_fox_S22_L008_R1_001'](images/31_4F_fox_S22_L008_R1_001.fastqc_base_quality.png)
 
-<br>
+\
 
 ![Per-base N content '31_4F_fox_S22_L008_R1_001'](images/31_4F_fox_S22_L008_R1_001.fastqc_n_content.png)
 
-<br>
+\
 
 \newpage
 
@@ -66,11 +66,11 @@ output:
 
 ![Per-base quality content '31_4F_fox_S22_L008_R2_001'](images/31_4F_fox_S22_L008_R2_001.fastqc_base_quality.png)
 
-<br>
+\
 
 ![Per-base N content '31_4F_fox_S22_L008_R2_001'](images/31_4F_fox_S22_L008_R2_001.fastqc_n_content.png)
 
-<br>
+\
 
 \newpage
 
@@ -87,11 +87,11 @@ output:
 
 ![Per-base quality content '23_4A_control_S17_L008_R1_001'](images/23_4A_control_S17_L008_R1_001.fastqc_base_quality.png)
 
-<br>
+\
 
 ![Per-base N content '23_4A_control_S17_L008_R1_001'](images/23_4A_control_S17_L008_R1_001.fastqc_n_content.png)
 
-<br>
+\
 
 \newpage
 
@@ -99,11 +99,11 @@ output:
 
 ![Per-base quality content '23_4A_control_S17_L008_R2_001'](images/23_4A_control_S17_L008_R2_001.fastqc_base_quality.png)
 
-<br>
+\
 
 ![Per-base N content '23_4A_control_S17_L008_R2_001'](images/23_4A_control_S17_L008_R2_001.fastqc_n_content.png)
 
-<br>
+\
 
 The per-base N quality graphs are consistent with the per-base quality graphs in that base 1 has higher N content relative to the other bases. This is in alignment with the lower per-base quality score relative to the other bases.
 
@@ -123,7 +123,7 @@ The per-base N quality graphs are consistent with the per-base quality graphs in
 <!-- ``` -->
 ![ Distribution of lengths for untrimmed reads '31_4F_fox_S22_L008_R1_001'](images/31_4F_fox_S22_L008_R1_001.histogram.png)
 
-<br>
+\
 
 **Fox Read 2:**
 
@@ -138,7 +138,7 @@ The per-base N quality graphs are consistent with the per-base quality graphs in
 <!-- ``` -->
 ![ Distribution of lengths for untrimmed reads '31_4F_fox_S22_L008_R2_001'](images/31_4F_fox_S22_L008_R2_001.histogram.png)
 
-<br>
+\
 
 \newpage
 
@@ -155,7 +155,7 @@ The per-base N quality graphs are consistent with the per-base quality graphs in
 
 ![ Distribution of lengths for untrimmed reads '23_4A_control_S17_L008_R1_001'](images/23_4A_control_S17_L008_R1_001.histogram.png)
 
-<br>
+\
 
 **Control Read 2:**
 
@@ -170,21 +170,21 @@ The per-base N quality graphs are consistent with the per-base quality graphs in
 
 ![ Distribution of lengths for untrimmed reads '23_4A_control_S17_L008_R2_001'](images/23_4A_control_S17_L008_R2_001.histogram.png)
 
-<br>
+\
 
-**Runtime difference:** Yes, the output and runtimes do differ. The fastqc graphs include box and whiskers to demonstrate the range of values found at each base. The fastqc charts also include green (28-41), yellow (20-28), and red (0-20) areas that correspond to quality level. This is helpful in providing the viewer with a quick reference of quality level at each base. 
+**Fastqc vs personal python script:** Yes, the output and runtimes do differ. While the shape of the mean quality score at each base appears to be identical between the two plots, the fastqc graphs include box and whiskers, providing additional information on the range of quality scores at each base. The red lines in these plots indicate the median at each base, and the upper and lower ends of the whiskers indicate the 10% and 90% points at each base. The fastqc charts also include green (28-41), yellow (20-28), and red (0-20) areas that correspond to quality level. This is helpful in providing the viewer with a quick reference of quality level at each base. 
 
-**Fox files:** The histogram generator runs for the fox files each took about 3 minutes 45 seconds and only produced the one histogram. The fastqc runs can be run with multiple CPUs using the -t flag. Running the two files with -t 8 results in total runtime of 29 seconds and produces substantially more information relative to our histogram generator script.
+**Fox files:** The histogram generator (personal python script) runs for the fox files each took about 3 minutes 45 seconds and only produced the one histogram. The fastqc runs can be run with multiple CPUs using the -t flag. Running the two files with -t 8 results in total runtime of 29 seconds and produces substantially more information relative to our histogram generator script.
 
-**Control files:** The histogram generator runs for the control files each took about 40 minutes. Running fastqc on the two controls files with 8 CPUs results in total runtime of 3 minutes 45 seconds and produces substantially more information relative to our histogram generator script.
+**Control files:** The histogram generator (personal python script) runs for the control files each took about 40 minutes. Running fastqc on the two controls files with 8 CPUs results in total runtime of 3 minutes 45 seconds and produces substantially more information relative to our histogram generator script.
 
 
 
 ## 3. Comment on the overall data quality of the two libraries
 
-**Fox files:** The quality of each of the read files is high. Neither was flagged for poor quality. The mean score is greater than 28 (green zone) for each of the read files. The ```31_4F_fox_S22_L008_R2_001.fastq.gz``` file does have some whiskers that drop down below quality score of 28 (yellow zone), indicating that there are values at the corresponding bases that fall below the quality level of 28. These are drops in quality primarily occur between bases 30-37 and 78-end-of-read, but the mean and majority of quality scores at each of the bases fall between 34-41.
+**Fox files:** The quality of each of the read files is high. Neither was flagged for poor quality. The mean score is greater than 28 (green zone) for each of the read files. The ```31_4F_fox_S22_L008_R2_001.fastq.gz``` file does have some whiskers that drop down below quality score of 28 (yellow zone), indicating that there are values at the corresponding bases that fall below the quality level of 28. These drops in quality primarily occur between bases 30-37 and 78-end-of-read, but the mean and majority of quality scores at each of the bases fall between 34-41.
 
-**Control files:** The quality for each of the read files is high, though R2 does have many whiskers extending below 28 (yellow zone) yellow range and one whisker, at base 1, that extends below 20 (red zone), indicating that there are some quality scores that fall below each of these levels at the corresponding bases. The mean quality score across all bases are all above 28 (green zone), though the 1st base mean quality score is lower at around 30, lower than the rest of the mean quality scores in this read and the lowest value that we seen among all four files.
+**Control files:** The quality for each of the read files is high, though R2 does have many whiskers extending below 28 (yellow zone) and one whisker, at base 1, that extends below 20 (red zone), indicating that there is a portion of the lowest 10% of quality scores at these corresponding bases that fall below these levels. The mean quality score across all bases are all above 28 (green zone), though the 1st base mean quality score is lower at around 30, lower than the rest of the mean quality scores in this read and the lowest value that we seen among all four files.
 
 
 # Part 2 - Adaptor trimming comparison
@@ -233,25 +233,6 @@ The per-base N quality graphs are consistent with the per-base quality graphs in
 <!--   /projects/bgmp/shared/2017_sequencing/demultiplexed/23_4A_control_S17_L008_R2_001.fastq.gz -->
 <!-- ``` -->
 
-<!-- **Confirm adapter sequences were removed:** -->
-
-<!-- ``` -->
-<!-- zcat trimmed_31_4F_fox_S22_L008_R1_001.fastq.gz | grep "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA" -->
-
-<!-- zcat trimmed_31_4F_fox_S22_L008_R2_001.fastq.gz | grep "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT" -->
-
-<!-- zcat trimmed_23_4A_control_S17_L008_R1_001.fastq.gz | grep "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA" -->
-
-<!-- zcat trimmed_23_4A_control_S17_L008_R2_001.fastq.gz | grep "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT" -->
-<!-- ``` -->
-
-
-**Results of adapter check:** All returns to the check commands returned nothing, confirming that adapter sequences are not present in the adapter-trimmed files.
-
-**Reasoning for choosing commands for adapter check:** I chose to use a command that checks for the adapter sequence in the finished file because I want to confirm that the adapter sequence was removed from the raw reads file and then the reads output to a new file.
-
-\
-
 **What proportion of reads were trimmed?**
 
 **Fox File Adapter Trim Stats:**
@@ -272,9 +253,27 @@ Total read pairs processed:         44,303,262
   
   Read 2 with adapter:               1,657,295 (3.7%)
   
-  
-  
+\
 
+**Confirm adapter sequences were removed:**
+
+```
+zcat trimmed_31_4F_fox_S22_L008_R1_001.fastq.gz | grep "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA"
+
+zcat trimmed_31_4F_fox_S22_L008_R2_001.fastq.gz | grep "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT"
+
+zcat trimmed_23_4A_control_S17_L008_R1_001.fastq.gz | grep "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA"
+
+zcat trimmed_23_4A_control_S17_L008_R2_001.fastq.gz | grep "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT"
+```
+
+**Determination of adapter sequences:** I utilized the 'Overrepresented sequences' tab from the fastq report to  assist in determining adapter sequences. Fastqc suggested Truseq was used for sequencing. /i looked up adapter trimming for TruSeq and was directed to an Illumina webpage, ```https://support.illumina.com/bulletins/2016/12/what-sequences-do-i-use-for-adapter-trimming.html```, that provided the sequences to use for adapter trimming. This information is available in the cutadapt documentation, as well.
+
+**Results of adapter check:** All returns to the check commands returned nothing, confirming that adapter sequences are not present in the adapter-trimmed files. 
+
+**Reasoning for choosing commands for adapter check:** I chose to use a command that checks for the adapter sequence in the finished file because I want to confirm that the adapter sequence was removed from the raw reads before being output to the adapter trimmed files.
+
+\
 
 <!-- ## 6. Trimmomatic runs -->
 
@@ -323,7 +322,7 @@ Total read pairs processed:         44,303,262
 
 ![ Distribution of lengths of '31_4F_fox_S22_L008_R1_001' and '31_4F_fox_S22_L008_R2_001' reads following adapter and quality trimming.](images/trimmed_lengths_fox.histogram.png)
 
-<br>
+\
 
 <!-- ``` -->
 <!-- ./python_scripts/dual_histogram.py \ -->
@@ -337,9 +336,9 @@ Total read pairs processed:         44,303,262
 
 ![ Distribution of lengths of '23_4A_control_S17_L008_R1_001' and '23_4A_control_S17_L008_R2_001' reads following adapter and quality trimming.](images/trimmed_lengths_control.histogram.png)
 
-<br>
+\
 
-**R1 or R2 adapter-trimmed at different rates?** I would expect R2 to be adapter-trimmed at a higher rate. Because this read sits on the sequencer for a longer period of time, the strand is exposed to a greater amount of harsh chemicals and there are more opportunities for breakdown of the molecules and for errors to be made.
+**R1 or R2 adapter-trimmed at different rates?** I would expect R2 to be adapter-trimmed at a higher rate. Because this read sits on the sequencer for a longer period of time, the strand is exposed to a greater amount of harsh chemicals and there are more opportunities for breakdown of the DNA molecules, subsequently leading to a higher proportion of adapter sequences present in the reads. 
 
 
 # Part 3 - Alignment and strand-specificity
@@ -502,7 +501,7 @@ Total read pairs processed:         44,303,262
 <!-- 5654669 -->
 <!-- ``` -->
 
-<!-- <br> -->
+<!-- \ -->
 
 <!-- **Determine total reads in each file:** -->
 
@@ -522,19 +521,19 @@ Total read pairs processed:         44,303,262
 <!-- 6695837 -->
 <!-- ``` -->
 
-<!-- <br> -->
+<!-- \ -->
 
 <!-- **Determine percentage of reads mapped:** -->
 
 ```
 control_reverse.genecount
-65575631 / 81286723 = 80.7%
+65575631 reads mapped to features / 81286723 total reads = 80.7%
 
 control_stranded.genecount
 2173292 / 81286723 = 2.67%
 
 control_unstranded.genecount
-64101648 / 81286723 = 78.9%
+64101648 / 81286723 = 78.9% 
 
 fox_reverse.genecount
 5686010 / 6695837 = 84.9%
@@ -546,7 +545,7 @@ fox_unstranded.genecount
 5654669 / 6695837 = 84.5%
 ```
 
-<br>
+\
 
 **Stranded or unstranded library prep:** I propose the data are from stranded library preps because the proportion of reads mapped in the 'reverse' direction for the 'fox' and 'control' reads, 84.9% and 80.7% respectively, are roughly equal to the proportion of reads mapped in each 'unstranded' run, 84.5% and 78.9% respectively, whereas, in the 'stranded' (forward) run only 4.2% and 2.67% of the reads mapped in the 'fox' and 'control' runs, respectively. If the prep were unstranded, we would expect roughly equal proportions of mapped reads in the 'stranded' (forward) and 'reverse' runs.
 
