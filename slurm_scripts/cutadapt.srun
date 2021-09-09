@@ -23,17 +23,12 @@ out1=$3
 out2=$4
 in1=$5
 in2=$6
-threads=6
 
 # run
 /usr/bin/time -v cutadapt \
     -a $a1 \
+    -A $a2 \
     -o $out1 \
+    -p $out2 \
     $in1 \
-    -j $threads
-
-/usr/bin/time -v cutadapt \
-    -a $a2 \
-    -o $out2 \
-    $in2 \
-    -j $threads
+    $in2
